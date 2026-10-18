@@ -21,7 +21,7 @@
   <a href="#interactive-feature-showcase--rubric-checklist">Rubric Checklist</a> &middot;
   <a href="#architecture--design-system">Architecture</a> &middot;
   <a href="#local-development">Local Setup</a> &middot;
-  <a href="#credits--team">Credits</a>
+  <a href="#-team-orbit">Team ORBIT</a>
 </p>
 
 <br />
@@ -163,7 +163,7 @@ babys-first-website-dot/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/dot-archive.git
+   git clone https://github.com/Rudra4451/dot-archive.git
    cd dot-archive
    ```
 
@@ -187,17 +187,58 @@ babys-first-website-dot/
 
 ---
 
-## Credits & Team
+## ✦ Team ORBIT
 
-| Role | Contributor | Primary Focus |
-| :--- | :--- | :--- |
-| **Lead Developer & Creative Director** | Team Dot | Character concept, Web Audio synthesis, and design system |
-| **Frontend & 3D Graphics Engineer** | Team Dot | Three.js procedural voxel reconstruction and responsive layout |
-| **Copywriter & Narrative Designer** | Team Dot | Moth & Moon lore, cutscene dialogue, and character tone |
-| **QA & Accessibility Specialist** | Team Dot | Keyboard trap validation, reduced-motion auditing, and performance |
+<div align="center">
+
+<p align="center">
+  <img src="https://img.shields.io/badge/ORBIT-CREATIVE%20COLLECTIVE-C96F8E?style=for-the-badge" alt="Team ORBIT Sticker" />
+  <img src="https://img.shields.io/badge/UNIVERSE-THREE%20MINDS%20%C2%B7%20ONE%20PIXEL-A8C3B0?style=for-the-badge" alt="Universe Sticker" />
+  <img src="https://img.shields.io/badge/ARCHIVE-SECTOR%2009-F2C94C?style=for-the-badge" alt="Sector 09 Sticker" />
+</p>
+
+# ORBIT
+
+*Three minds. One little universe.*
+
+We built **Dot — The Archive of Unfinished Games** for Baby's First Website Hackathon, Track 2: Original Character.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Track%202-Original%20Character-C96F8E?style=flat-square&labelColor=2D2420" alt="Track 2" />
+  <img src="https://img.shields.io/badge/Status-Sector%2009%20Open-A8C3B0?style=flat-square&labelColor=2D2420" alt="Sector 09 Open" />
+  <img src="https://img.shields.io/badge/Mascot-Dot.exe%20Voxel-4FD1C5?style=flat-square&labelColor=2D2420" alt="Dot.exe" />
+</p>
+
+</div>
+
+<br />
+
+| Team Member | Role |
+| :--- | :--- |
+| **Rudra Pratap Swain**<br /><img src="https://img.shields.io/badge/Role-Team%20Lead-C96F8E?style=flat-square&labelColor=2D2420" alt="Team Lead Badge" /> | **Team Lead &middot; Creative Direction & Development**<br /><sub>Architecture &middot; Web Audio Synthesizer &middot; Three.js Voxel Engine</sub><br /><img src="https://img.shields.io/badge/Discipline-Architecture%20%26%20Audio-2D2420?style=flat-square&labelColor=2D2420" alt="Architecture" /> <img src="https://img.shields.io/badge/Stack-Three.js%20%C2%B7%20WebAudio-4FD1C5?style=flat-square&labelColor=2D2420" alt="Three.js" /> |
+| **Rohan Kumar Routa**<br /><img src="https://img.shields.io/badge/Role-Frontend%20Dev-4FD1C5?style=flat-square&labelColor=2D2420" alt="Frontend Dev Badge" /> | **Frontend Development & Interactive Systems**<br /><sub>Sprite Repair Workshop &middot; The Lost Levels Map &middot; Jukebox Mechanics</sub><br /><img src="https://img.shields.io/badge/Discipline-Sprite%20Lab%20%26%20Map-F2C94C?style=flat-square&labelColor=2D2420" alt="Sprite Lab" /> <img src="https://img.shields.io/badge/Stack-ES6+%20%C2%B7%20Interactive%20DOM-A8C3B0?style=flat-square&labelColor=2D2420" alt="DOM Systems" /> |
+| **Suswapnil Sahu**<br /><img src="https://img.shields.io/badge/Role-Design%20%26%20Lore-E5829D?style=flat-square&labelColor=2D2420" alt="Design Lead Badge" /> | **Design, Storytelling & Quality Assurance**<br /><sub>Soft Editorial Cute UI &middot; Moth & Moon Lore &middot; Accessibility & QA</sub><br /><img src="https://img.shields.io/badge/Discipline-Story%20%26%20Narrative-C96F8E?style=flat-square&labelColor=2D2420" alt="Story" /> <img src="https://img.shields.io/badge/Audit-WCAG%20%C2%B7%20Reduced%20Motion-2D2420?style=flat-square&labelColor=2D2420" alt="Accessibility" /> |
+
+<br />
+
+<div align="center">
 
 ---
 
-<div align="center">
-  <sub>Archive of Unfinished Games &middot; Sector 09 &middot; Dot.exe &middot; Baby's First Website Hackathon</sub>
+### `ARCHIVE STATUS: OPEN`
+
+*Somewhere, a little pixel is still waiting to be placed.*
+
+<br />
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Dot.exe-Sector%2009-4FD1C5?style=flat-square&labelColor=2D2420" alt="Dot.exe" />
+  <img src="https://img.shields.io/badge/Created%20By-Team%20ORBIT-C96F8E?style=flat-square&labelColor=2D2420" alt="Created By Team ORBIT" />
+  <img src="https://img.shields.io/badge/Baby's%20First%20Website-Track%202%20Original%20Character-F2C94C?style=flat-square&labelColor=2D2420" alt="Track 2" />
+</p>
+
+<sub>Dot.exe &middot; Sector 09 &middot; Created by Team ORBIT</sub><br />
+<sub>Baby's First Website Hackathon &middot; Track 2 — Original Character</sub>
+
 </div>
+
