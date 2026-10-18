@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dot's Personal Archive Homepage - Soft Editorial Cute sanctuary for Dot, the stray 8-bit pixel and Sprite Restorer at the Archive of Unfinished Games.">
+  <title>ARCHIVE_09 :: DOT.EXE — Sprite Restorer</title>
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload Fraunces and Fredoka Fonts (Zero FOUT & Instant Render) -->
+  <link
+    rel="preload"
+    href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+  <link
+    rel="preload"
+    href="https://fonts.gstatic.com/s/fredoka/v17/X7n64b87HvSqjb_WIi2yDCRwoQ_k7367_DWu89U.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  >
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       CHAOS MODE: CLEAN SINGLE-LINE MARQUEE TICKER (REVEALED WHEN ACTIVE)
+       ====================================================================== -->
+  <aside id="chaos-ticker-banner" class="chaos-marquee-strip" hidden role="region" aria-label="Glitch Overdrive Ticker">
+    <div class="chaos-marquee-track">
+      <span>// SYSTEM NOTE: GLITCH OVERDRIVE ACTIVE &bull; PIXEL DISPLACEMENT 4% &bull; FRAME 88 SYNCHRONIZED &bull; DOT SNEEZED &bull; RECOVERY BAY OPERATIONAL //</span>
+      <span>// SYSTEM NOTE: GLITCH OVERDRIVE ACTIVE &bull; PIXEL DISPLACEMENT 4% &bull; FRAME 88 SYNCHRONIZED &bull; DOT SNEEZED &bull; RECOVERY BAY OPERATIONAL //</span>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       SITE HEADER: TOP ARCHIVE COMMAND STRIP & UNIFIED DIRECTORY DOCK
+       ====================================================================== -->
+  <header class="top-archive-strip" role="banner" id="top-archive-bar">
+    <div class="container top-archive-inner">
+      
+      <!-- Left: Archival Identity & Live Beacon -->
+      <div class="archive-brand-wrap">
+        <a href="#boot" class="brand-avatar-link" aria-label="Dot Archive Home">
+          <div class="brand-avatar-badge" aria-hidden="true">
+            <svg class="mini-dot-svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="5" fill="#4FD1C5" />
+              <rect x="6" y="8" width="3" height="4" rx="1" fill="#1A1423" />
+              <rect x="15" y="8" width="3" height="4" rx="1" fill="#1A1423" />
+              <rect x="5" y="14" width="2.5" height="1.5" rx="0.5" fill="#E5829D" />
+              <rect x="16.5" y="14" width="2.5" height="1.5" rx="0.5" fill="#E5829D" />
+              <path d="M10 15H14" stroke="#1A1423" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+          </div>
+          <span class="brand-title">
+            <span class="brand-code">ARCHIVE_09</span><span class="brand-sep">/</span><span class="brand-file">DOT.EXE</span>
+          </span>
+        </a>
+        <div class="brand-status-capsule" id="brand-status-capsule" title="Archive System Status: Online">
+          <span class="status-pulse-dot" aria-hidden="true"></span>
+          <span class="status-badge" id="status-badge-text">ONLINE</span>
+        </div>
+        <span id="top-lost-level-badge-slot" class="status-pill status-pill--gold" style="display:none;" title="Secret Easter Egg: Sector 00 Restored"></span>
+      </div>
+
+      <!-- Center: Boutique Claymorphic Directory Navigation -->
+      <nav class="archive-nav-dock" role="navigation" aria-label="Archive Directory Index" id="archive-nav">
+        <div class="index-nav-links" id="index-nav-links">
+          <a href="#boot" id="nav-boot" class="index-nav-chip active" title="Go to Boot Home">
+            <span class="chip-hash">#</span>Home
+          </a>
+          <a href="#about" id="nav-about" class="index-nav-chip" title="Go to Character Dossier">
+            <span class="chip-hash">#</span>Dossier
+          </a>
+          <a href="#voxel-lab" id="nav-voxel" class="index-nav-chip" title="Go to 3D Voxel Lab">
+            <span class="chip-hash">#</span>3D Voxel
+          </a>
+          <a href="#projects" id="nav-projects" class="index-nav-chip" title="Go to Sprite Workshops">
+            <span class="chip-hash">#</span>Workshops
+          </a>
+          <a href="#story" id="nav-story" class="index-nav-chip" title="Go to SAM Story Log">
+            <span class="chip-hash">#</span>Log
+          </a>
+          <a href="#guestbook-section" id="nav-guestbook" class="index-nav-chip" title="Go to Dream Wishbook">
+            <span class="chip-hash">#</span>Wishes
+          </a>
+          <a href="#footer" id="nav-footer" class="index-nav-chip" title="Go to Archive Ledger">
+            <span class="chip-hash">#</span>Ledger
+          </a>
+        </div>
+      </nav>
+
+      <!-- Right: Unified Interactive Hardware Controls (Zero Overlap) -->
+      <div class="top-archive-actions" id="top-archive-actions">
+        <!-- Day / Dream Mode Toggle -->
+        <button
+          id="theme-mode-toggle"
+          class="archive-control-pill theme-control-pill floating-theme-pill"
+          type="button"
+          aria-pressed="false"
+          title="Toggle Day / 3:00 AM Midnight Archive Mode"
+        >
+          <span class="theme-icon" aria-hidden="true">&#9790;</span>
+          <span class="theme-label">3:00 AM</span>
+        </button>
+
+        <!-- Master Hardware Audio Switch -->
+        <button
+          id="sound-master-toggle"
+          class="archive-control-pill sound-control-pill floating-sound-pill"
+          type="button"
+          aria-pressed="false"
+          title="Master Hardware Audio Switch"
+        >
+          <svg class="sound-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <span class="sound-label">SOUND OFF</span>
+        </button>
+
+        <!-- Backward-compatible hook for legacy header-theme-toggle ID -->
+        <button id="header-theme-toggle" class="header-theme-toggle-btn" type="button" style="display:none;" aria-hidden="true"></button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       SECTION 1: #BOOT (HERO & CINEMATIC TERMINAL)
+       ====================================================================== -->
+  <section id="boot" class="hero-section" aria-label="Archive Entry & Introduction">
+    
+    <!-- Cinematic Floppy Terminal Overlay -->
+    <div id="boot-terminal-box" class="boot-terminal-box" aria-live="polite">
+      <div class="terminal-header-bar">
+        <span class="terminal-title">FLOPPY_DRIVE_A://ARCHIVE_09.EXE</span>
+        <div class="terminal-controls">
+          <button id="skip-boot-btn" class="term-link-btn" type="button" aria-label="Skip boot sequence">[Skip boot &rarr;]</button>
+          <button id="replay-boot-btn" class="term-link-btn" type="button" aria-label="Replay boot sequence" style="display: none;">[Replay boot]</button>
+        </div>
+      </div>
+      <div class="terminal-screen" id="terminal-screen">
+        <div class="term-line" id="term-line-1">OPENING ARCHIVE / 09...</div>
+        <div class="term-line" id="term-line-2">CHECKING SPRITES... 1 NEEDS REPAIR</div>
+        <div class="term-line" id="term-line-3">LOOKING FOR A LAST FRAME...</div>
+        <div class="term-line highlight" id="term-line-4">DOT FOUND. BEEP.</div>
+        <span class="term-cursor" id="term-cursor" aria-hidden="true">_</span>
+      </div>
+    </div>
+
+    <!-- Resolved Hero (Two-Column Asymmetric: Left 55% Text, Right 45% Dot) -->
+    <div class="container">
+      <div class="hero-layout">
+
+        <!-- Left Column: Editorial Specs & CTAs -->
+        <div class="hero-content">
+          <span class="eyebrow hero-eyebrow">ARCHIVE OF UNFINISHED GAMES</span>
+          
+          <h1 class="hero-title" id="boot-heading">
+            I'm Dot. I fix what got left behind.
+          </h1>
+
+          <p class="hero-desc" id="hero-welcome-text">
+            I'm an 8-bit pixel. I live in the recycle bin. I put broken game sprites back together.
+          </p>
+
+          <!-- 3.3: Visitor Memory Container ("What should I call you?" or welcome back greeting) -->
+          <div id="visitor-memory-container" class="visitor-memory-box" aria-live="polite"></div>
+
+          <!-- Cute Companion Toy: Give Dot a Star -->
+          <div class="hero-companion-toy" id="hero-companion-toy">
+            <button id="give-star-btn" class="give-star-btn" type="button" aria-label="Give Dot a golden star to cheer him up">
+              <span class="star-btn-emoji" aria-hidden="true">⭐</span>
+              <span class="star-btn-label">Give Dot a star</span>
+              <span id="hero-star-badge" class="star-badge-counter">0</span>
+            </button>
+            <div id="dot-cheer-bubble" class="dot-cheer-bubble" aria-live="polite">
+              <span id="dot-cheer-text">Dot is happy you're here.</span>
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="#projects" id="press-start-btn" class="btn btn--primary hero-btn-main">
+              <span>See my shop</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="#project-jukebox" class="btn btn--ghost hero-btn-secondary" id="hero-play-chiptune-btn">
+              <span>Listen to a dead game</span>
+              <span aria-hidden="true">&#9835;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Dot Sprite Diorama Stage -->
+        <div class="hero-mascot-wrap">
+          <!-- Soft Cyan Radial Halo (20% Opacity) -->
+          <div class="hero-cyan-halo" aria-hidden="true"></div>
+
+          <div class="hero-mascot-float">
+            <!-- 32x32 SVG Displayed at 280px -->
+            <svg
+              id="dot-svg-hero"
+              class="dot-sprite-svg"
+              width="280"
+              height="280"
+              viewBox="0 0 32 32"
+              shape-rendering="crispEdges"
+              role="img"
+              aria-label="Dot: an expressive 8-bit cyan pixel with a chipped corner and golden paintbrush"
+            >
+              <!-- Ground Shadow -->
+              <rect x="7" y="28" width="18" height="2" fill="#2D2420" opacity="0.10" />
+              <rect x="9" y="27" width="14" height="1" fill="#2D2420" opacity="0.16" />
+
+              <!-- Little Boots -->
+              <rect x="9" y="25" width="4" height="2" fill="#2D2420" />
+              <rect x="9" y="25" width="3" height="1" fill="#288078" />
+              <rect x="19" y="25" width="4" height="2" fill="#2D2420" />
+              <rect x="19" y="25" width="3" height="1" fill="#288078" />
+
+              <!-- Left Arm -->
+              <rect x="4" y="16" width="3" height="3" fill="#4FD1C5" />
+              <rect x="4" y="16" width="1" height="3" fill="#2D2420" />
+              <rect x="4" y="19" width="3" height="1" fill="#2D2420" />
+              <rect x="5" y="16" width="2" height="1" fill="#99F6E4" />
+
+              <!-- Right Arm & Golden Restorer Tool -->
+              <rect x="25" y="16" width="3" height="3" fill="#4FD1C5" />
+              <rect x="27" y="15" width="2" height="2" fill="#4FD1C5" />
+              <rect x="25" y="19" width="4" height="1" fill="#2D2420" />
+              <rect x="28" y="13" width="2" height="3" fill="#F2C94C" />
+              <rect x="27" y="12" width="4" height="1" fill="#2D2420" />
+              <rect x="27" y="13" width="1" height="1" fill="#2D2420" />
+              <rect x="30" y="13" width="1" height="1" fill="#2D2420" />
+              <rect x="28" y="13" width="1" height="1" fill="#FFFFFF" />
+
+              <!-- Chubby Body (#4FD1C5) -->
+              <rect x="8" y="8" width="12" height="1" fill="#4FD1C5" />
+              <rect x="8" y="9" width="14" height="1" fill="#4FD1C5" />
+              <rect x="8" y="10" width="16" height="1" fill="#4FD1C5" />
+              <rect x="8" y="11" width="17" height="14" fill="#4FD1C5" />
+
+              <!-- Inner Highlight Bevel (#99F6E4) -->
+              <rect x="8" y="8" width="11" height="1" fill="#99F6E4" />
+              <rect x="8" y="9" width="2" height="15" fill="#99F6E4" />
+              <rect x="10" y="9" width="2" height="1" fill="#99F6E4" />
+
+              <!-- Inner Shadow Bevel (#288078) -->
+              <rect x="8" y="24" width="17" height="1" fill="#288078" />
+              <rect x="23" y="11" width="2" height="13" fill="#288078" />
+              <rect x="19" y="8" width="1" height="1" fill="#288078" />
+              <rect x="21" y="9" width="1" height="1" fill="#288078" />
+              <rect x="23" y="10" width="1" height="1" fill="#288078" />
+
+              <!-- 1px #2D2420 Outline with Stepped Chipped Corner -->
+              <rect x="8" y="7" width="12" height="1" fill="#2D2420" />
+              <rect x="20" y="8" width="2" height="1" fill="#2D2420" />
+              <rect x="22" y="9" width="2" height="1" fill="#2D2420" />
+              <rect x="24" y="10" width="1" height="1" fill="#2D2420" />
+              <rect x="25" y="11" width="1" height="14" fill="#2D2420" />
+              <rect x="8" y="25" width="17" height="1" fill="#2D2420" />
+              <rect x="7" y="8" width="1" height="17" fill="#2D2420" />
+
+              <!-- Floating Chipped Corner Crumbs -->
+              <rect x="22" y="5" width="2" height="2" fill="#4FD1C5" />
+              <rect x="25" y="4" width="1" height="1" fill="#F2C94C" />
+
+              <!-- Eyes & Face -->
+              <g class="dot-eyes" id="dot-eyes-container">
+                <rect x="10" y="15" width="4" height="5" fill="#2D2420" />
+                <rect x="10" y="15" width="2" height="2" fill="#FFFFFF" />
+                <rect x="18" y="15" width="4" height="5" fill="#2D2420" />
+                <rect x="18" y="15" width="2" height="2" fill="#FFFFFF" />
+                <rect class="dot-cheeks" x="9" y="20" width="2" height="1" fill="#C96F8E" opacity="0.8" />
+                <rect class="dot-cheeks" x="21" y="20" width="2" height="1" fill="#C96F8E" opacity="0.8" />
+                <rect x="14" y="20" width="3" height="1" fill="#2D2420" />
+                <rect x="17" y="19" width="1" height="1" fill="#2D2420" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 2: #ABOUT (EDITORIAL CHARACTER SHEET // PROFILE OF A SMALL PIXEL)
+       ====================================================================== -->
+  <section id="about" class="section character-sheet-section" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="character-sheet-layout">
+
+        <!-- Left Column: Portrait Panel (#FFF4E8 Soft Panel with Inner Shadow) -->
+        <div class="character-portrait-panel" id="about-portrait-panel">
+          <!-- Tactile Washi Tape Strip -->
+          <div class="washi-tape washi-tape--gingham" aria-hidden="true"></div>
+
+          <!-- Byte the Archive Cat sleeping on the frame -->
+          <div class="byte-cat-perch" id="byte-cat-toy" title="Click to pet Byte the sleeping cat" role="button" tabindex="0" aria-label="Byte the sleeping archive cat. Click to pet.">
+            <div class="byte-sleep-bubbles" aria-hidden="true">
+              <span class="z-particle z-1">z</span>
+              <span class="z-particle z-2">z</span>
+              <span class="z-particle z-3">Z</span>
+            </div>
+            <svg class="byte-cat-svg" width="70" height="46" viewBox="0 0 32 22" shape-rendering="crispEdges" aria-hidden="true">
+              <!-- Shadow -->
+              <rect x="4" y="20" width="24" height="2" fill="#2D2420" opacity="0.12" />
+              <!-- Curled body base (Calico cream #FFF1D6, Orange #E08244, Dark brown #2D2420) -->
+              <rect x="5" y="10" width="22" height="10" fill="#FFF1D6" rx="2" />
+              <rect x="5" y="10" width="8" height="8" fill="#E08244" />
+              <rect x="18" y="12" width="6" height="7" fill="#2D2420" />
+              <!-- Tucked tail -->
+              <rect x="2" y="14" width="4" height="4" fill="#E08244" />
+              <rect x="3" y="12" width="2" height="3" fill="#FFF1D6" />
+              <!-- Head -->
+              <rect x="16" y="6" width="12" height="10" fill="#FFF1D6" />
+              <!-- Calico face patch -->
+              <rect x="16" y="6" width="6" height="6" fill="#E08244" />
+              <!-- Ears -->
+              <polygon points="17,6 19,2 22,6" fill="#E08244" />
+              <polygon points="24,6 26,2 28,6" fill="#2D2420" />
+              <polygon points="18,5 19,3 21,5" fill="#E5829D" />
+              <!-- Sleeping closed eyes (◡ ◡) -->
+              <rect x="19" y="10" width="2" height="1" fill="#2D2420" class="cat-eye" />
+              <rect x="19" y="11" width="1" height="1" fill="#2D2420" class="cat-eye" />
+              <rect x="25" y="10" width="2" height="1" fill="#2D2420" class="cat-eye" />
+              <rect x="25" y="11" width="1" height="1" fill="#2D2420" class="cat-eye" />
+              <!-- Pink nose & smile -->
+              <rect x="23" y="12" width="2" height="1" fill="#E5829D" />
+              <path d="M22 14 Q23 15 24 14 Q25 15 26 14" stroke="#2D2420" stroke-width="0.8" fill="none" />
+              <!-- White paws -->
+              <rect x="14" y="18" width="4" height="2" fill="#FFFFFF" />
+              <rect x="20" y="18" width="4" height="2" fill="#FFFFFF" />
+            </svg>
+            <div class="byte-purr-bubble" id="byte-purr-bubble" aria-live="polite">
+              <span id="byte-purr-text">Purr...</span>
+            </div>
+          </div>
+
+          <button
+            class="character-portrait-stage"
+            id="dossier-portrait-btn"
+            type="button"
+            aria-label="Click Dot for a tiny beep"
+            style="background:none; border:none; padding:0;"
+          >
+            <!-- Floating Beep Spawner Anchor -->
+            <div id="beep-anchor" class="beep-anchor" aria-hidden="true"></div>
+
+            <svg
+              id="dossier-dot-svg"
+              class="character-portrait-svg"
+              width="320"
+              height="320"
+              viewBox="0 0 32 32"
+              shape-rendering="crispEdges"
+              role="img"
+              aria-label="Portrait of Dot, the 8-bit stray pixel"
+            >
+              <!-- Boots -->
+              <rect x="9" y="25" width="4" height="2" fill="#2D2420" />
+              <rect x="9" y="25" width="3" height="1" fill="#288078" />
+              <rect x="19" y="25" width="4" height="2" fill="#2D2420" />
+              <rect x="19" y="25" width="3" height="1" fill="#288078" />
+
+              <!-- Left Arm -->
+              <rect x="4" y="16" width="3" height="3" fill="#4FD1C5" />
+              <rect x="4" y="16" width="1" height="3" fill="#2D2420" />
+              <rect x="4" y="19" width="3" height="1" fill="#2D2420" />
+              <rect x="5" y="16" width="2" height="1" fill="#99F6E4" />
+
+              <!-- Right Arm -->
+              <rect x="25" y="16" width="3" height="3" fill="#4FD1C5" />
+              <rect x="27" y="15" width="2" height="2" fill="#4FD1C5" />
+              <rect x="25" y="19" width="4" height="1" fill="#2D2420" />
+              <rect x="28" y="13" width="2" height="3" fill="#F2C94C" />
+              <rect x="27" y="12" width="4" height="1" fill="#2D2420" />
+              <rect x="27" y="13" width="1" height="1" fill="#2D2420" />
+              <rect x="30" y="13" width="1" height="1" fill="#2D2420" />
+              <rect x="28" y="13" width="1" height="1" fill="#FFFFFF" />
+
+              <!-- Body -->
+              <rect x="8" y="8" width="12" height="1" fill="#4FD1C5" />
+              <rect x="8" y="9" width="14" height="1" fill="#4FD1C5" />
+              <rect x="8" y="10" width="16" height="1" fill="#4FD1C5" />
+              <rect x="8" y="11" width="17" height="14" fill="#4FD1C5" />
+
+              <!-- Highlight & Shadow -->
+              <rect x="8" y="8" width="11" height="1" fill="#99F6E4" />
+              <rect x="8" y="9" width="2" height="15" fill="#99F6E4" />
+              <rect x="8" y="24" width="17" height="1" fill="#288078" />
+              <rect x="23" y="11" width="2" height="13" fill="#288078" />
+
+              <!-- Outline & Stepped Corner -->
+              <rect x="8" y="7" width="12" height="1" fill="#2D2420" />
+              <rect x="20" y="8" width="2" height="1" fill="#2D2420" />
+              <rect x="22" y="9" width="2" height="1" fill="#2D2420" />
+              <rect x="24" y="10" width="1" height="1" fill="#2D2420" />
+              <rect x="25" y="11" width="1" height="14" fill="#2D2420" />
+              <rect x="8" y="25" width="17" height="1" fill="#2D2420" />
+              <rect x="7" y="8" width="1" height="17" fill="#2D2420" />
+
+              <!-- Face -->
+              <rect x="10" y="15" width="4" height="5" fill="#2D2420" />
+              <rect x="10" y="15" width="2" height="2" fill="#FFFFFF" />
+              <rect x="18" y="15" width="4" height="5" fill="#2D2420" />
+              <rect x="18" y="15" width="2" height="2" fill="#FFFFFF" />
+              <rect x="9" y="20" width="2" height="1" fill="#C96F8E" opacity="0.8" />
+              <rect x="21" y="20" width="2" height="1" fill="#C96F8E" opacity="0.8" />
+              <rect x="14" y="20" width="3" height="1" fill="#2D2420" />
+              <rect x="17" y="19" width="1" height="1" fill="#2D2420" />
+            </svg>
+          </button>
+          
+          <!-- Vintage Rubber Ink Stamp of Authenticity -->
+          <div class="archive-ink-stamp" aria-hidden="true">
+            <span class="stamp-sub">ARCHIVE 09</span>
+            <span class="stamp-main">INSPECTED</span>
+            <span class="stamp-sub">1997 ★ OK</span>
+          </div>
+
+          <div id="portrait-speech-slot" class="portrait-speech-slot" style="display:none;" aria-live="polite">
+            <span id="speech-stamp-text" class="speech-stamp-text"></span>
+          </div>
+        </div>
+
+        <!-- Right Column: Editorial Definition List -->
+        <div class="character-copy-column">
+          <span class="eyebrow character-eyebrow">CHARACTER SHEET</span>
+          
+          <h2 id="about-heading" class="character-heading">
+            A very small pixel with a very specific job.
+          </h2>
+
+          <p class="character-lead">
+            I was pixel 14,000 in a game called Moth &amp; Moon. The game got deleted in 1997. I survived.
+          </p>
+
+          <dl class="character-traits-list">
+            <div class="trait-row">
+              <dt class="trait-label">SPECIES</dt>
+              <dd class="trait-value">One stray pixel. 8-bit. Chipped on the top-right corner.</dd>
+            </div>
+
+            <div class="trait-row">
+              <dt class="trait-label">JOB</dt>
+              <dd class="trait-value">Sprite restorer. If your game is missing a moon, a sword, or a hat, I find it.</dd>
+            </div>
+
+            <div class="trait-row">
+              <dt class="trait-label">QUIRKS</dt>
+              <dd class="trait-value">I duplicate myself when I sneeze. I say &ldquo;beep&rdquo; instead of &ldquo;sorry.&rdquo;</dd>
+            </div>
+
+            <div class="trait-row">
+              <dt class="trait-label">VOICE</dt>
+              <dd class="trait-value">Quiet. Warm. A little glitchy.</dd>
+            </div>
+          </dl>
+
+          <!-- Interactive Desk Checklist (Post-It Sticky Note) -->
+          <aside class="desk-sticky-note" id="desk-sticky-note" aria-label="Dot's Desk Checklist">
+            <div class="sticky-tape-tab" aria-hidden="true"></div>
+            <div class="sticky-header">
+              <span class="sticky-pin" aria-hidden="true">📌</span>
+              <span class="sticky-title">DOT'S DESK NOTES</span>
+              <span class="sticky-date">ARCHIVE_1997</span>
+            </div>
+            <ul class="sticky-tasks" id="sticky-tasks-list">
+              <li class="sticky-task-item">
+                <label class="sticky-task-label">
+                  <input type="checkbox" id="task-moon" checked />
+                  <span class="sticky-custom-box"></span>
+                  <span class="sticky-task-text">Polish moon corner [Frame 88]</span>
+                </label>
+              </li>
+              <li class="sticky-task-item">
+                <label class="sticky-task-label">
+                  <input type="checkbox" id="task-cat" />
+                  <span class="sticky-custom-box"></span>
+                  <span class="sticky-task-text">Pet Byte the sleeping cat</span>
+                </label>
+              </li>
+              <li class="sticky-task-item">
+                <label class="sticky-task-label">
+                  <input type="checkbox" id="task-star" />
+                  <span class="sticky-custom-box"></span>
+                  <span class="sticky-task-text">Give Dot 1 golden star</span>
+                </label>
+              </li>
+              <li class="sticky-task-item">
+                <label class="sticky-task-label">
+                  <input type="checkbox" id="task-sneeze" />
+                  <span class="sticky-custom-box"></span>
+                  <span class="sticky-task-text">Try not to sneeze duplicate pixels</span>
+                </label>
+              </li>
+            </ul>
+            <div class="sticky-footer">
+              <span id="sticky-progress-text" class="sticky-progress-text">1 of 4 finished</span>
+              <span id="sticky-cheer-stamp" class="sticky-cheer-stamp" style="display:none;">★ ALL TIDY!</span>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 2.5: #VOXEL-LAB (3D WEBGL VOXEL RECONSTRUCTION // THREE.JS)
+       ====================================================================== -->
+  <section id="voxel-lab" class="section voxel-section" aria-labelledby="voxel-heading">
+    <div class="container">
+      <div class="voxel-layout">
+        
+        <div class="voxel-copy-column">
+          <span class="eyebrow" style="color:var(--berry);">3D RECONSTRUCTION // THREE.JS</span>
+          <h2 id="voxel-heading" class="voxel-heading">
+            Voxel Dot in 3D WebGL space
+          </h2>
+          <p class="voxel-lead">
+            Procedurally assembled cube by cube using <code>THREE.BoxGeometry</code> and Lambertian materials. No external <code>.gltf</code> files required. Drag to orbit and inspect Dot&rsquo;s chipped corner.
+          </p>
+          
+          <div class="voxel-specs-list">
+            <span class="voxel-spec-pill">[ VOXELS: 168 CUBES ]</span>
+            <span class="voxel-spec-pill">[ MATERIAL: LAMBERT ]</span>
+            <span class="voxel-spec-pill">[ INTERACTION: ROTATABLE ]</span>
+          </div>
+
+          <p class="voxel-interaction-tip">
+            <span aria-hidden="true">&#8635;</span> Click &amp; drag to rotate in 3D space.
+          </p>
+        </div>
+
+        <div class="voxel-stage-column">
+          <div class="voxel-stage-card paintable" id="voxel-stage-card">
+            
+            <!-- WebGL Canvas Mount (Desktop >= 768px, Lazy-loaded with IntersectionObserver) -->
+            <div
+              id="voxel-canvas-mount"
+              class="voxel-canvas-mount"
+              tabindex="0"
+              role="region"
+              aria-label="Interactive 3D Voxel Model of Dot. Click and drag or use Arrow keys to rotate in 3D."
+            >
+              <div class="voxel-placeholder-state" id="voxel-loader-state">
+                <span class="voxel-loader-spinner" aria-hidden="true">&#9632;</span>
+                <span class="voxel-loader-text">// SCROLL TO INITIALIZE 3D VOXEL ENGINE //</span>
+              </div>
+            </div>
+
+            <!-- High-Res 2D CSS/SVG Fallback (< 768px skips Three.js entirely) -->
+            <div id="voxel-mobile-fallback" class="voxel-mobile-fallback" style="display:none;" aria-label="High-resolution 2D fallback for mobile devices">
+              <svg class="fallback-pixel-svg" width="180" height="180" viewBox="0 0 32 32" shape-rendering="crispEdges">
+                <rect x="8" y="11" width="17" height="14" fill="#4FD1C5" />
+                <rect x="8" y="8" width="11" height="3" fill="#99F6E4" />
+                <rect x="10" y="15" width="4" height="5" fill="#2D2420" />
+                <rect x="10" y="15" width="2" height="2" fill="#FFFFFF" />
+                <rect x="18" y="15" width="4" height="5" fill="#2D2420" />
+                <rect x="18" y="15" width="2" height="2" fill="#FFFFFF" />
+                <rect x="9" y="20" width="2" height="1" fill="#C96F8E" />
+                <rect x="21" y="20" width="2" height="1" fill="#C96F8E" />
+                <rect x="22" y="5" width="2" height="2" fill="#4FD1C5" />
+                <rect x="25" y="4" width="1" height="1" fill="#F2C94C" />
+              </svg>
+              <span class="fallback-note">// MOBILE VIEWPORT: HIGH-RES 2D VECTOR FALLBACK ACTIVE</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 3: #PROJECTS (RESTORATION WORKSHOPS // 3 CLAYMORPHIC CARDS)
+       ====================================================================== -->
+  <section id="projects" class="section projects-section" aria-labelledby="projects-heading">
+    <div class="container">
+      
+      <div class="projects-section-header">
+        <span class="eyebrow">RESTORATION WORKSHOPS</span>
+        <h2 id="projects-heading" class="projects-section-title">
+          Three benches for unfinished games
+        </h2>
+        <p class="projects-section-lead">
+          Dot&rsquo;s active restoration bays inside the Archive. Each bench is a different shape because each recovery job is different.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- CARD 1: SPRITE REPAIR SHOP -->
+        <article class="card wobble project-card paintable" id="project-repair">
+          <!-- Tactile Mint Polka Washi Tape -->
+          <div class="washi-tape washi-tape--mint" aria-hidden="true"></div>
+
+          <header class="card__header">
+            <div class="card__header-top">
+              <span class="eyebrow card__eyebrow">BENCH 01 // GRAPH-PAPER WORKBENCH</span>
+              <span class="card-craft-tape">[ BENCH 01 &bull; RESCUE ]</span>
+            </div>
+            <h3 class="card__title">Sprite Repair Shop</h3>
+            <p class="card__desc">
+              Broken sprites come to me half-erased. Click the grey squares to put the pixels back. Sometimes I get the colours wrong. You can fix that.
+            </p>
+          </header>
+
+          <div class="card__body">
+            <div class="toy-panel toy-panel--cream" id="sprite-repair-shop-mount">
+              
+              <div class="repair-file-tabs" id="repair-file-tabs" role="tablist" aria-label="Sprite File Queue">
+                <button class="repair-tab-pill active" id="tab-file-0" role="tab" aria-selected="true" data-file="0">
+                  Moon_88
+                </button>
+                <button class="repair-tab-pill" id="tab-file-1" role="tab" aria-selected="false" data-file="1">
+                  Heart_1Up
+                </button>
+                <button class="repair-tab-pill" id="tab-file-2" role="tab" aria-selected="false" data-file="2">
+                  Floppy_99
+                </button>
+              </div>
+
+              <div class="repair-file-title" id="repair-file-title">
+                CRESCENT MOON // MOTH &amp; MOON (1997)
+              </div>
+              <div class="repair-bench-copy" id="repair-bench-copy">
+                Missing frame 88 restored pixel by pixel.
+              </div>
+
+              <div class="repair-grid-wrap">
+                <div class="repair-grid" id="repair-grid" role="grid" aria-label="6 by 6 Sprite Repair Grid">
+                  <!-- Generated by SpriteRepairWorkshop JS -->
+                </div>
+              </div>
+
+              <div class="repair-meta-row">
+                <span class="repair-counter" id="repair-counter">
+                  REPAIRED: <strong>0</strong> / 6 PIXELS
+                </span>
+                <span class="repair-status-tag" id="repair-status-tag">6 PIXELS CORRUPTED</span>
+                <span class="repair-stamp-slot" id="repair-stamp-slot" aria-live="polite"></span>
+                <button id="repair-reset-btn" class="repair-reset-btn" type="button" aria-label="Reset file">
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <footer class="card__footer">
+            <a href="#project-repair" class="project-cta-link">
+              <span>Fix a sprite</span>
+              <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </footer>
+        </article>
+
+        <!-- CARD 2: THE LOST LEVELS MAP -->
+        <article class="card wobble project-card paintable" id="project-map">
+          <!-- Tactile Honey Gold Washi Tape -->
+          <div class="washi-tape washi-tape--gold" aria-hidden="true"></div>
+
+          <header class="card__header">
+            <div class="card__header-top">
+              <span class="eyebrow card__eyebrow">BENCH 02 // OVERWORLD BLUEPRINT</span>
+              <span class="card-craft-tape">[ BENCH 02 &bull; OVERWORLD ]</span>
+            </div>
+            <h3 class="card__title">The Lost Levels</h3>
+            <p class="card__desc">
+              Every cancelled game left a map behind. Hover over the markers to see why the studio gave up. (Usually it was money).
+            </p>
+          </header>
+
+          <div class="card__body">
+            <div class="toy-panel toy-panel--gridpaper" id="lost-levels-map-mount">
+              
+              <div class="map-viewport">
+                <svg
+                  class="map-overworld-svg"
+                  id="lost-levels-svg-canvas"
+                  viewBox="0 0 500 180"
+                  width="100%"
+                  height="100%"
+                  aria-label="Overworld map of 5 lost game sectors"
+                  role="img"
+                >
+                  <path id="lost-levels-base-track" d="M 65 50 L 160 90 L 270 40 L 370 120 L 450 60" fill="none" stroke="rgba(45,36,32,0.18)" stroke-width="2" stroke-dasharray="4 4" />
+                  <path id="lost-levels-active-route" d="M 65 50 L 160 90 L 270 40 L 370 120 L 450 60" fill="none" stroke="var(--berry)" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6" />
+
+                  <g class="map-node" id="map-node-1" role="button" tabindex="0" aria-label="Sector 01: World 1-4" data-loc="0">
+                    <circle cx="65" cy="50" r="14" class="node-circle" />
+                    <text x="65" y="54" class="node-text">01</text>
+                  </g>
+                  <g class="map-node" id="map-node-2" role="button" tabindex="0" aria-label="Sector 02: Sector B" data-loc="1">
+                    <circle cx="160" cy="90" r="14" class="node-circle" />
+                    <text x="160" y="94" class="node-text">02</text>
+                  </g>
+                  <g class="map-node" id="map-node-3" role="button" tabindex="0" aria-label="Sector 03: Moon Attic" data-loc="2">
+                    <circle cx="270" cy="40" r="14" class="node-circle" />
+                    <text x="270" y="44" class="node-text">03</text>
+                  </g>
+                  <g class="map-node" id="map-node-4" role="button" tabindex="0" aria-label="Sector 04: Boss Room" data-loc="3">
+                    <circle cx="370" cy="120" r="14" class="node-circle" />
+                    <text x="370" y="124" class="node-text">04</text>
+                  </g>
+                  <g class="map-node" id="map-node-5" role="button" tabindex="0" aria-label="Sector 05: Save Point" data-loc="4">
+                    <circle cx="450" cy="60" r="14" class="node-circle" />
+                    <text x="450" y="64" class="node-text">05</text>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="map-index-row" id="map-index-row">
+                <button class="map-index-btn" type="button" data-loc="0">[01] W1-4</button>
+                <button class="map-index-btn" type="button" data-loc="1">[02] Rain</button>
+                <button class="map-index-btn" type="button" data-loc="2">[03] Attic</button>
+                <button class="map-index-btn" type="button" data-loc="3">[04] Boss</button>
+                <button class="map-index-btn" type="button" data-loc="4">[05] Save</button>
+              </div>
+
+              <div class="map-inspector-pill" id="map-inspector-box">
+                <div class="map-inspector-content" id="map-inspector-content">
+                  <span class="inspector-empty">// Tap or hover a sector node to inspect details</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <footer class="card__footer">
+            <a href="#project-map" class="project-cta-link">
+              <span>Open the map</span>
+              <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </footer>
+        </article>
+
+        <!-- CARD 3: CHIPTUNE JUKEBOX -->
+        <article class="card wobble project-card paintable" id="project-jukebox">
+          <!-- Tactile Berry Striped Washi Tape -->
+          <div class="washi-tape washi-tape--berry" aria-hidden="true"></div>
+
+          <header class="card__header">
+            <div class="card__header-top">
+              <span class="eyebrow card__eyebrow">BENCH 03 // AUDIO ARCHIVE</span>
+              <span class="card-craft-tape">[ BENCH 03 &bull; TAPE ]</span>
+            </div>
+            <h3 class="card__title">Dead Game Jukebox</h3>
+            <p class="card__desc">
+              I found these songs in deleted files. They still work. I play them so they don't get lonely. Turn your volume up.
+          </header>
+
+          <div class="card__body">
+            <div class="toy-panel toy-panel--cream" id="chiptune-jukebox-mount">
+              
+              <div class="jukebox-display" id="jukebox-display">
+                <span class="jukebox-display-line" id="jukebox-display-line">STANDBY // SELECT TRACK</span>
+                <span class="jukebox-oscilloscope" id="jukebox-oscilloscope" aria-hidden="true">[---~---]</span>
+              </div>
+
+              <div class="jukebox-track-list">
+                <button class="jukebox-soft-key" id="juke-track-1" type="button" data-track="0" aria-label="Play Track 1">
+                  <span class="pulse-gold-dot" aria-hidden="true"></span>
+                  <span class="track-title">01 loading_screen.wav</span>
+                  <span class="track-time">0:08</span>
+                </button>
+
+                <button class="jukebox-soft-key" id="juke-track-2" type="button" data-track="1" aria-label="Play Track 2">
+                  <span class="pulse-gold-dot" aria-hidden="true"></span>
+                  <span class="track-title">02 boss_that_never_was.mod</span>
+                  <span class="track-time">0:10</span>
+                </button>
+
+                <button class="jukebox-soft-key" id="juke-track-3" type="button" data-track="2" aria-label="Play Track 3">
+                  <span class="pulse-gold-dot" aria-hidden="true"></span>
+                  <span class="track-title">03 credits_another_ending.mid</span>
+                  <span class="track-time">0:12</span>
+                </button>
+              </div>
+
+              <div class="jukebox-footer-row">
+                <span class="jukebox-status-line" id="jukebox-status-line" aria-live="polite">
+                  Sound engine ready
+                </span>
+                <button class="jukebox-stop-pill" id="juke-stop" type="button" aria-label="Stop playback">
+                  &#9632; Stop
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <footer class="card__footer">
+            <a href="#project-jukebox" class="project-cta-link" id="card-play-chiptune-btn">
+              <span>Press play</span>
+              <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SECTION 4: #STORY (INTERACTIVE 8-BIT RPG CUTSCENE // VISUAL NOVEL)
+       ====================================================================== -->
+  <section id="story" class="story-rpg-container" aria-label="Dot's Origin Story: Moth & Moon">
+    
+    <!-- Sticky RPG Cutscene Viewport (100vh Sticky Stage) -->
+    <div class="story-rpg-stage" id="story-rpg-stage">
+      
+      <!-- Visual Scene 1: Dark blue night sky, large glowing pixel moon with Dot at top-right corner -->
+      <div class="story-scene-layer story-scene--1 active" id="story-scene-layer-1" aria-hidden="false">
+        <div class="rpg-sky-backdrop">
+          <div class="rpg-starfield" aria-hidden="true">
+            <span class="rpg-star star-1"></span>
+            <span class="rpg-star star-2"></span>
+            <span class="rpg-star star-3"></span>
+            <span class="rpg-star star-4"></span>
+            <span class="rpg-star star-5"></span>
+            <span class="rpg-star star-6"></span>
+            <span class="rpg-star star-7"></span>
+            <span class="rpg-star star-8"></span>
+          </div>
+          <div class="rpg-moon-wrapper">
+            <div class="rpg-moon-glow" aria-hidden="true"></div>
+            <svg class="rpg-pixel-moon-svg" viewBox="0 0 32 32" width="220" height="220" shape-rendering="crispEdges">
+              <!-- Pixel Crescent Moon -->
+              <rect x="10" y="4" width="7" height="2" fill="#F2C94C" />
+              <!-- Top-right corner: Dot in 1997! Glowing cyan pixel 14,000 -->
+              <rect x="17" y="4" width="2" height="2" fill="#4FD1C5" class="rpg-dot-corner-pixel" />
+              <rect x="8" y="6" width="12" height="2" fill="#F2C94C" />
+              <rect x="7" y="8" width="13" height="3" fill="#F2C94C" />
+              <rect x="6" y="11" width="13" height="4" fill="#F2C94C" />
+              <rect x="7" y="15" width="11" height="3" fill="#F2C94C" />
+              <rect x="8" y="18" width="9" height="2" fill="#F2C94C" />
+              <rect x="10" y="20" width="6" height="2" fill="#F2C94C" />
+              <!-- Moon Inner Shadow Curve -->
+              <rect x="13" y="7" width="8" height="12" fill="#0C132B" />
+              <rect x="12" y="8" width="8" height="10" fill="#0C132B" />
+              <rect x="11" y="10" width="8" height="6" fill="#0C132B" />
+            </svg>
+            <div class="rpg-moon-subtext">ROW 88 &bull; PIXEL 14,000</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Scene 2: Moon shrinks into distance; pulsing retro Windows 95 [X] close button -->
+      <div class="story-scene-layer story-scene--2" id="story-scene-layer-2" aria-hidden="true">
+        <div class="rpg-twilight-backdrop">
+          <!-- Shrunken Moon in background -->
+          <div class="rpg-shrunken-moon-wrap">
+            <div class="rpg-mini-moon"></div>
+          </div>
+          <!-- Retro 1997 Desktop Window Frame -->
+          <div class="win95-window-frame">
+            <div class="win95-titlebar">
+              <div class="win95-title-wrap">
+                <span class="win95-icon" aria-hidden="true">&#9646;</span>
+                <span class="win95-title">Moth &amp; Moon [v1.0] &bull; 2:47 AM</span>
+              </div>
+              <div class="win95-controls">
+                <button type="button" class="win95-btn" aria-label="Minimize" tabindex="-1">_</button>
+                <button type="button" class="win95-btn" aria-label="Maximize" tabindex="-1">&#9633;</button>
+                <button type="button" class="win95-btn win95-btn--close pulsing" aria-label="Close" tabindex="-1">&#10005;</button>
+              </div>
+            </div>
+            <div class="win95-canvas">
+              <div class="win95-fading-sky">
+                <span class="win95-curfew-stamp">2:47 AM &bull; PLAYER HAS LOGGED OFF</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Scene 3: Dark grey terminal screen. "MOTH" and "MOON" dissolve row by row, lone cyan pixel in recycle bin -->
+      <div class="story-scene-layer story-scene--3" id="story-scene-layer-3" aria-hidden="true">
+        <div class="rpg-void-backdrop">
+          <div class="rpg-crt-scanlines" aria-hidden="true"></div>
+          <div class="rpg-dissolve-stage">
+            <div class="rpg-dissolve-words" id="rpg-dissolve-words">
+              <div class="dissolve-word word-moth">
+                <span class="pixel-row row-1">&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;</span>
+                <span class="pixel-row row-2">M &nbsp; O &nbsp; T &nbsp; H</span>
+                <span class="pixel-row row-3">&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;</span>
+              </div>
+              <div class="dissolve-word word-moon">
+                <span class="pixel-row row-4">&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;</span>
+                <span class="pixel-row row-5">M &nbsp; O &nbsp; O &nbsp; N</span>
+                <span class="pixel-row row-6">&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;</span>
+              </div>
+            </div>
+            <!-- The lone survivor: Dot sitting in recycle bin -->
+            <div class="rpg-lone-pixel-wrap">
+              <div class="rpg-recycle-bin-icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.6">
+                  <polyline points="3 6 5 6 21 6"></polyline>
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+              </div>
+              <div class="rpg-lone-cyan-pixel" title="Dot alone in recycle bin"></div>
+              <span class="rpg-survivor-tag">RECYCLE_BIN &bull; 1 PIXEL REMAINING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Scene 4: Warm cream background, pixel-art shop icon & Dot restoring -->
+      <div class="story-scene-layer story-scene--4" id="story-scene-layer-4" aria-hidden="true">
+        <div class="rpg-shop-backdrop">
+          <div class="rpg-shop-stage">
+            <!-- Pixel Art Shop Awning & Stall -->
+            <div class="rpg-shop-stall">
+              <div class="rpg-shop-awning">
+                <span class="awning-stripe stripe-berry"></span>
+                <span class="awning-stripe stripe-cream"></span>
+                <span class="awning-stripe stripe-berry"></span>
+                <span class="awning-stripe stripe-cream"></span>
+                <span class="awning-stripe stripe-berry"></span>
+                <span class="awning-stripe stripe-cream"></span>
+                <span class="awning-stripe stripe-berry"></span>
+              </div>
+              <div class="rpg-shop-counter">
+                <div class="rpg-shop-sign">DOT&rsquo;S SPRITE REPAIR</div>
+                <div class="rpg-shop-items">
+                  <span class="shop-prop prop-moon" title="Restored Moon">&#9790;</span>
+                  <span class="shop-prop prop-sword" title="Restored Sword">&#9876;</span>
+                  <span class="shop-prop prop-hat" title="Restored Hat">&#9787;</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Restorer Dot Waving Beside Shop -->
+            <div class="rpg-shop-dot">
+              <svg width="100" height="100" viewBox="0 0 32 32" shape-rendering="crispEdges">
+                <rect x="8" y="8" width="16" height="16" fill="#4FD1C5" />
+                <rect x="8" y="7" width="12" height="1" fill="#2D2420" />
+                <rect x="20" y="8" width="2" height="1" fill="#2D2420" />
+                <rect x="22" y="9" width="2" height="1" fill="#2D2420" />
+                <rect x="11" y="14" width="3" height="4" fill="#2D2420" />
+                <rect x="11" y="14" width="1" height="1" fill="#FFFFFF" />
+                <rect x="18" y="14" width="3" height="4" fill="#2D2420" />
+                <rect x="18" y="14" width="1" height="1" fill="#FFFFFF" />
+                <rect x="9" y="19" width="2" height="1" fill="#C96F8E" />
+                <rect x="21" y="19" width="2" height="1" fill="#C96F8E" />
+                <!-- Waving Golden Paintbrush Tool -->
+                <rect x="25" y="12" width="4" height="4" fill="#F2C94C" />
+                <rect x="27" y="10" width="2" height="2" fill="#F2C94C" />
+                <rect x="10" y="24" width="4" height="2" fill="#2D2420" />
+                <rect x="18" y="24" width="4" height="2" fill="#2D2420" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dialogue Box: Fixed at the bottom of the sticky container -->
+      <div class="story-dialogue-box" id="story-dialogue-box" role="region" aria-live="polite">
+        <div class="dialogue-box-top">
+          <div class="dialogue-speaker-wrap">
+            <span class="dialogue-pulse-dot" aria-hidden="true"></span>
+            <span class="dialogue-speaker">DOT</span>
+          </div>
+          <div class="dialogue-meta-chip" id="dialogue-scene-tag">SCENE 01 / 04</div>
+        </div>
+        
+        <p class="dialogue-text" id="dialogue-typed-text">
+          In 1997, a game called Moth &amp; Moon booted for the first time. I was the top-right corner of the moon. It was a good job. Quiet. I got to watch the whole sky.
+        </p>
+
+        <div class="dialogue-indicator" aria-hidden="true">&#9660;</div>
+      </div>
+
+    </div>
+
+    <!-- Scroll Timeline: 4 Trigger Steps driving IntersectionObserver -->
+    <div class="story-scroll-track" id="story-scroll-track" aria-hidden="true">
+      <div class="story-scroll-step" data-scene="1" id="story-step-1"></div>
+      <div class="story-scroll-step" data-scene="2" id="story-step-2"></div>
+      <div class="story-scroll-step" data-scene="3" id="story-step-3"></div>
+      <div class="story-scroll-step" data-scene="4" id="story-step-4"></div>
+    </div>
+
+  </section>
+
+  <!-- ======================================================================
+       SECTION 5: #FOOTER (TWO-COLUMN EDITORIAL + FULL-WIDTH METALLIC STRIP)
+       ====================================================================== -->
+  <footer id="footer" class="site-footer" role="contentinfo" aria-labelledby="footer-title">
+    
+    <div class="container footer-upper-container">
+      <div class="footer-layout-grid">
+
+        <div class="footer-summary-column">
+          <span class="eyebrow footer-eyebrow">COLOPHON &bull; ARCHIVE 09</span>
+          <h2 id="footer-title" class="footer-heading">Archive of Unfinished Games</h2>
+          <p class="footer-desc">
+            A gentle digital refuge maintained by Dot, an 8-bit orphan pixel. Here, missing animation frames, half-drawn forests, and abandoned save files are preserved with quiet care.
+          </p>
+        </div>
+
+        <nav class="footer-links-column" aria-label="Archive Directory">
+          <span class="footer-nav-label">SECTOR INDEX</span>
+          <ul class="footer-links-list">
+            <li><a href="#boot" class="footer-nav-link">Top of Page &uarr;</a></li>
+            <li><a href="#about" class="footer-nav-link">Character Sheet [D-008]</a></li>
+            <li><a href="#projects" class="footer-nav-link">Restoration Workshops (3)</a></li>
+            <li><a href="#story" class="footer-nav-link">Origin Story (1997)</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- 3.4: LIVE DREAM GUESTBOOK (ZERO BACKEND // NETLIFY FORM) -->
+    <div id="guestbook-section" class="guestbook-section container">
+      <div class="guestbook-card paintable" id="guestbook-container">
+        <!-- Tactile Lavender Washi Tape & Paperclip -->
+        <div class="washi-tape washi-tape--lavender" aria-hidden="true"></div>
+        <div class="guestbook-paperclip" aria-hidden="true" title="Paperclip">📎</div>
+        
+        <div class="guestbook-header">
+          <span class="eyebrow card__eyebrow" style="color:var(--berry);">BENCH 04 // LIVE WISHBOOK</span>
+          <h3 class="card__title">Live Dream Guestbook</h3>
+          <p class="card__desc">
+            Leave a quiet wish or memory for unfinished video games. Submits asynchronously via Netlify Forms with instant optimistic rendering.
+          </p>
+        </div>
+
+        <form
+          id="guestbook-form"
+          name="dream-guestbook"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="guestbook-form"
+        >
+          <input type="hidden" name="form-name" value="dream-guestbook" />
+          <p style="display:none;" aria-hidden="true">
+            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+
+          <div class="guestbook-inputs-grid">
+            <div class="form-group">
+              <label for="guestbook-handle" class="form-label">YOUR CALLSIGN / NAME</label>
+              <input
+                type="text"
+                id="guestbook-handle"
+                name="name"
+                class="guestbook-input"
+                placeholder="e.g. PixelRestorer_97"
+                maxlength="32"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="guestbook-wish" class="form-label">YOUR WISH FOR UNFINISHED GAMES</label>
+              <input
+                type="text"
+                id="guestbook-wish"
+                name="message"
+                class="guestbook-input"
+                placeholder="e.g. May every abandoned bridge lead somewhere warm."
+                maxlength="140"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="guestbook-actions-row">
+            <button type="submit" id="guestbook-submit-btn" class="btn btn--primary guestbook-submit-btn">
+              <span>Send Wish into Archive</span>
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+            <span id="guestbook-status" class="guestbook-status-msg" aria-live="polite"></span>
+          </div>
+        </form>
+
+        <!-- Live Wishes Wall -->
+        <div class="guestbook-feed" id="guestbook-feed" role="feed" aria-label="Wishes from Archive Visitors">
+          <!-- Seed / User Wishes Appended Dynamically -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Metallic Strip with Odometer & Chaos Switch -->
+    <div class="footer-bottom-strip">
+      <div class="container footer-strip-inner">
+
+        <div class="footer-copy-text">
+          &copy; 2026 Dot &bull; Archive of Unfinished Games
+        </div>
+
+        <!-- 7-Digit Rotating Drum Odometer (5 taps triggers Sector 00) -->
+        <div class="odometer-hardware-housing">
+          <span class="odometer-drum-label">Visitors since 1997:</span>
+          <button
+            type="button"
+            id="visitor-counter-container"
+            class="odometer-case-btn"
+            aria-label="Archive visitor counter: 0000123. Tap 5 times to reveal secret Sector 00"
+            title="Physical drum odometer — tap 5 times to reveal the lost level"
+          >
+            <span class="odometer-bezel">
+              <span class="odometer-cells-mount" id="odometer-cells-mount">
+                <span class="odometer-drum-cell">0</span>
+                <span class="odometer-drum-cell">0</span>
+                <span class="odometer-drum-cell">0</span>
+                <span class="odometer-drum-cell">0</span>
+                <span class="odometer-drum-cell">1</span>
+                <span class="odometer-drum-cell">2</span>
+                <span class="odometer-drum-cell">3</span>
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <!-- Chaos Mode Physical Rocker Switch -->
+        <div class="chaos-switch-unit">
+          <span class="chaos-switch-label">CHAOS MODE (DO NOT PRESS)</span>
+          <button
+            type="button"
+            id="chaos-mode-toggle"
+            class="physical-rocker-switch"
+            aria-pressed="false"
+            title="Toggle Glitch Overdrive"
+          >
+            <span class="switch-housing">
+              <span class="switch-thumb"></span>
+            </span>
+            <span class="chaos-label visually-hidden">CHAOS: OFF</span>
+          </button>
+        </div>
+
+        <div id="footer-lost-level-badge-slot" style="display:none; width:100%; text-align:center;"></div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ======================================================================
+       LOST LEVEL EASTER EGG MODAL OVERLAY (SECTOR 00)
+       ====================================================================== -->
+  <div id="lost-level-modal-overlay" class="modal-overlay" hidden style="display:none;">
+    <div class="modal-backdrop" id="lost-level-backdrop"></div>
+    <div
+      class="lost-level-dialog"
+      id="lost-level-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lost-level-title"
+      tabindex="-1"
+    >
+      <div class="modal-terminal-header">
+        <span class="badge badge--sage">// SYSTEM RECOVERY: CRITICAL SUCCESS</span>
+        <button type="button" class="modal-close-x-btn" id="lost-level-close-x" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <h2 id="lost-level-title" class="lost-level-heading">SECTOR 00 // LOST LEVEL FOUND</h2>
+
+      <!-- Fully restored Crescent Moon SVG with all pixels accounted for and Dot waving with golden pixel trophy -->
+      <div class="lost-level-art-frame">
+        <svg
+          class="lost-level-svg"
+          viewBox="0 0 32 32"
+          width="160"
+          height="160"
+          shape-rendering="crispEdges"
+          role="img"
+          aria-label="Completed Moon glowing gold and cyan, with Dot waving beside a golden pixel trophy"
+        >
+          <!-- Starfield -->
+          <rect x="2" y="3" width="1" height="1" fill="#4fd1c5" opacity="0.6" />
+          <rect x="29" y="5" width="1" height="1" fill="#f2c94c" opacity="0.6" />
+          <rect x="15" y="2" width="1" height="1" fill="#ffffff" opacity="0.8" />
+          <rect x="27" y="16" width="1" height="1" fill="#4fd1c5" opacity="0.5" />
+          <rect x="3" y="22" width="1" height="1" fill="#ffffff" opacity="0.5" />
+
+          <!-- Golden Moon with restored Frame 88 cyan corner -->
+          <rect x="10" y="4" width="7" height="2" fill="#f2c94c" />
+          <rect x="17" y="4" width="2" height="2" fill="#4fd1c5" />
+          <rect x="8" y="6" width="12" height="2" fill="#f2c94c" />
+          <rect x="7" y="8" width="13" height="3" fill="#f2c94c" />
+          <rect x="6" y="11" width="13" height="4" fill="#f2c94c" />
+          <rect x="7" y="15" width="11" height="3" fill="#f2c94c" />
+          <rect x="8" y="18" width="9" height="2" fill="#f2c94c" />
+          <rect x="10" y="20" width="6" height="2" fill="#f2c94c" />
+          <rect x="13" y="7" width="8" height="12" fill="#2d2420" />
+          <rect x="12" y="8" width="8" height="10" fill="#2d2420" />
+          <rect x="11" y="10" width="8" height="6" fill="#2d2420" />
+
+          <!-- Platform Base -->
+          <rect x="2" y="28" width="28" height="2" fill="#3a302a" />
+          <rect x="2" y="30" width="28" height="1" fill="#2d2420" />
+
+          <!-- Golden Pixel Trophy -->
+          <rect x="4" y="21" width="5" height="3" fill="#f2c94c" />
+          <rect x="3" y="21" width="1" height="2" fill="#f2c94c" />
+          <rect x="9" y="21" width="1" height="2" fill="#f2c94c" />
+          <rect x="6" y="24" width="1" height="2" fill="#e09830" />
+          <rect x="4" y="26" width="5" height="2" fill="#f2c94c" />
+          <rect x="5" y="22" width="1" height="1" fill="#ffffff" />
+
+          <!-- Dot Waving Proudly -->
+          <rect x="18" y="20" width="8" height="8" fill="#4fd1c5" />
+          <rect x="24" y="20" width="2" height="2" fill="#2d2420" />
+          <rect x="20" y="23" width="1" height="2" fill="#2d2420" />
+          <rect x="23" y="23" width="1" height="2" fill="#2d2420" />
+          <rect x="17" y="24" width="1" height="2" fill="#4fd1c5" />
+          <rect x="26" y="21" width="2" height="2" fill="#4fd1c5" />
+          <rect x="27" y="19" width="2" height="2" fill="#4fd1c5" />
+          <rect x="28" y="17" width="1" height="2" fill="#4fd1c5" />
+          <rect x="19" y="26" width="1" height="1" fill="#f2c94c" />
+          <rect x="24" y="26" width="1" height="1" fill="#f2c94c" />
+        </svg>
+      </div>
+
+      <blockquote class="lost-level-quote">
+        &ldquo;You found the level nobody finished. It&rsquo;s yours now. Beep.&rdquo;
+      </blockquote>
+
+      <div class="lost-level-stats-strip" style="font-family:var(--font-mono); font-size:var(--text-xs); color:var(--ink-soft); display:flex; gap:var(--space-2); justify-content:center;">
+        <span>STATUS: RESTORED // ALL ASSETS RECOVERED</span> &bull;
+        <span>PERMANENT BADGE AWARDED</span>
+      </div>
+
+      <button
+        type="button"
+        class="btn btn--primary"
+        id="lost-level-dismiss-btn"
+        style="align-self:center; margin-top:var(--space-2);"
+      >
+        Return to Archive [ESC]
+      </button>
+    </div>
+  </div>
+
+  <!-- 3.2: FLOATING CHARACTER AI CHAT WIDGET (RULE-BASED TERMINAL) -->
+  <aside id="dot-chat-widget" class="floating-chat-widget" aria-label="Dot AI Assistant">
+    <!-- Chat Launcher Pill Button -->
+    <button
+      id="chat-toggle-btn"
+      class="chat-launcher-btn"
+      type="button"
+      aria-expanded="false"
+      aria-controls="chat-window-panel"
+      aria-label="Open AI chat with Dot"
+      title="Chat with Dot"
+    >
+      <span class="chat-launcher-icon" aria-hidden="true">&#9632;</span>
+      <span class="chat-launcher-text">CHAT WITH DOT</span>
+    </button>
+
+    <!-- Claymorphic Terminal Chat Window -->
+    <div
+      id="chat-window-panel"
+      class="chat-window-panel toy-panel toy-panel--cream"
+      role="region"
+      aria-label="Dot Dialogue Terminal"
+      hidden
+    >
+      <div class="chat-header-bar">
+        <div class="chat-header-title-wrap">
+          <span class="chat-status-pulse" aria-hidden="true"></span>
+          <span class="chat-terminal-title">DOT.EXE // DIALOGUE ENGINE</span>
+        </div>
+        <div class="chat-header-actions">
+          <button id="chat-clear-btn" class="chat-clear-btn" type="button" title="Reset chat conversation" aria-label="Reset chat">Reset</button>
+          <button id="chat-close-btn" class="chat-close-x-btn" type="button" aria-label="Close chat window">&times;</button>
+        </div>
+      </div>
+
+      <div class="chat-log-stream" id="chat-log-box" role="log" aria-live="polite">
+        <div class="chat-bubble dot-bubble">
+          <span class="bubble-sender">DOT:</span>
+          <span class="bubble-text">Beep! Hello. Welcome to the archive. Did you get lost?</span>
+        </div>
+      </div>
+
+      <!-- Quick Option Chips for User to Choose -->
+      <div class="chat-suggestions-shelf" id="chat-suggestions-shelf" aria-label="Suggested topics">
+        <span class="suggestions-label">PICK A TOPIC:</span>
+        <div class="suggestions-chips-track">
+          <button type="button" class="chat-chip-btn" data-prompt="hello">👋 Hello!</button>
+          <button type="button" class="chat-chip-btn" data-prompt="game">🎮 Broken sprites?</button>
+          <button type="button" class="chat-chip-btn" data-prompt="moth and moon">🌙 Moth &amp; Moon?</button>
+          <button type="button" class="chat-chip-btn" data-prompt="shop">🏪 Where is your shop?</button>
+          <button type="button" class="chat-chip-btn" data-prompt="chipped corner">✂️ Chipped corner?</button>
+          <button type="button" class="chat-chip-btn" data-prompt="bye">👋 Bye for now</button>
+        </div>
+      </div>
+
+      <form id="chat-input-form" class="chat-terminal-form">
+        <input
+          type="text"
+          id="chat-user-input"
+          class="chat-terminal-input"
+          placeholder="Ask Dot or tap an option above..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="chat-terminal-send-btn" aria-label="Send message">&rarr;</button>
+      </form>
+    </div>
+  </aside>
+
+  <div id="pixel-trail-container" aria-hidden="true"></div>
+
+  <!-- Custom Pixel Restorer Cursor Aura (Desktop Only) -->
+  <div id="cursor-aura" class="custom-cursor-aura" aria-hidden="true"></div>
+
+  <!-- Entry Script Hook (Modular ES Modules Architecture) -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
