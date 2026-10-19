@@ -3919,8 +3919,7 @@ html[data-theme="night"] .sticky-reason-text {
 
 .voxel-canvas-mount {
   width: 100%;
-  height: 360px;
-  aspect-ratio: 16 / 9;
+  height: 400px;
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -3940,8 +3939,8 @@ html[data-theme="night"] .sticky-reason-text {
 .voxel-canvas-mount canvas {
   width: 100% !important;
   height: 100% !important;
-  aspect-ratio: 16 / 9;
   display: block;
+  outline: none;
 }
 
 .voxel-placeholder-state {

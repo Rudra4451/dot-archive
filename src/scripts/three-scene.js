@@ -108,12 +108,13 @@ export class VoxelDotViewerManager {
       } else if (this.isInitialized && this.renderer && this.mountEl) {
         if (this.fallbackEl) this.fallbackEl.style.display = "none";
         this.mountEl.style.display = "block";
-        const width = this.mountEl.clientWidth || 360;
-        const height = this.mountEl.clientHeight || 360;
+        const rect = this.mountEl.getBoundingClientRect();
+        const width = Math.max(Math.round(rect.width), 320);
+        const height = Math.max(Math.round(rect.height), 360);
         this.camera.aspect = width / height;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(width, height);
-        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2.5));
       }
     }
   }
@@ -137,50 +138,72 @@ export class VoxelDotViewerManager {
 
   setupThreeScene() {
     const THREE = this.THREE;
-    const width = this.mountEl.clientWidth || 360;
-    const height = this.mountEl.clientHeight || 360;
+    const rect = this.mountEl.getBoundingClientRect();
+    const width = Math.max(Math.round(rect.width), 320);
+    const height = Math.max(Math.round(rect.height), 360);
 
     // Scene
     this.scene = new THREE.Scene();
 
-    // Camera
-    this.camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
-    this.camera.position.set(0, 1.2, 22);
+    // Camera (closer framing & focused FOV for sharp, cinematic presentation)
+    this.camera = new THREE.PerspectiveCamera(34, width / height, 0.1, 1000);
+    this.camera.position.set(0, 0.8, 16.5);
 
-    // WebGL Renderer (alpha transparent for claymorphism card background)
+    // High-Precision WebGL Renderer (alpha transparent for claymorphism card background)
     this.renderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true,
-      powerPreference: "high-performance"
+      powerPreference: "high-performance",
+      precision: "highp"
     });
     this.renderer.setSize(width, height);
-    // Strict mobile GPU protection: cap pixel ratio at 1.5
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    // Crisp High-DPI support up to 2.5x
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2.5));
+
+    // Modern color management & tone mapping for vibrant, punchy rendering
+    if (THREE.SRGBColorSpace) {
+      this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+    }
+    if (THREE.ACESFilmicToneMapping) {
+      this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      this.renderer.toneMappingExposure = 1.15;
+    }
 
     this.mountEl.innerHTML = "";
     this.mountEl.appendChild(this.renderer.domElement);
 
-    // Warm Ambient Light
-    const ambientLight = new THREE.AmbientLight(0xfff8f1, 0.95);
+    // Studio 3-Point Lighting
+    const ambientLight = new THREE.AmbientLight(0xfff8f1, 1.1);
     this.scene.add(ambientLight);
 
-    // Key Directional Light
-    const dirLight = new THREE.DirectionalLight(0xffffff, 1.3);
-    dirLight.position.set(12, 16, 12);
+    // Key Directional Light (crisp top-right highlights)
+    const dirLight = new THREE.DirectionalLight(0xffffff, 2.0);
+    dirLight.position.set(12, 18, 14);
     this.scene.add(dirLight);
 
-    // Cyan Rim Light
-    const cyanRim = new THREE.DirectionalLight(0x4fd1c5, 0.55);
-    cyanRim.position.set(-14, -6, -10);
+    // Soft Cyan Fill Light
+    const cyanRim = new THREE.DirectionalLight(0x7ef5e4, 1.2);
+    cyanRim.position.set(-14, 6, 8);
     this.scene.add(cyanRim);
 
-    // Warm Golden Uplight
-    const warmRim = new THREE.DirectionalLight(0xf2c94c, 0.4);
-    warmRim.position.set(0, -10, 12);
+    // Warm Golden Rim / Backlight
+    const warmRim = new THREE.DirectionalLight(0xfef08a, 1.4);
+    warmRim.position.set(0, 12, -14);
     this.scene.add(warmRim);
 
-    // Build procedural 3D voxel Dot (Budget: strictly < 1,000 triangles)
+    // Build procedural 3D voxel Dot
     this.buildProceduralDot();
+
+    // Ground Contact Shadow Disc
+    const shadowGeo = new THREE.CylinderGeometry(3.6, 3.6, 0.05, 32);
+    const shadowMat = new THREE.MeshBasicMaterial({
+      color: 0x1f1b18,
+      transparent: true,
+      opacity: 0.12
+    });
+    const shadowMesh = new THREE.Mesh(shadowGeo, shadowMat);
+    shadowMesh.position.set(0, -3.9, 0);
+    this.scene.add(shadowMesh);
 
     // Interaction controls (Mouse, Touch, and Accessible Keyboard Navigation)
     this.setupInteraction();
@@ -194,18 +217,18 @@ export class VoxelDotViewerManager {
     const THREE = this.THREE;
     this.dotGroup = new THREE.Group();
 
-    // Reusable BoxGeometry (12 triangles per cube; 65 cubes = 780 triangles < 1000 limit)
-    const boxGeo = new THREE.BoxGeometry(1.08, 1.08, 1.08);
+    // 0.96 box size creates micro-gap bevel definition so every voxel pops with clean, crisp edges!
+    const boxGeo = new THREE.BoxGeometry(0.96, 0.96, 0.96);
 
-    // MeshLambertMaterial palette
+    // High-spec MeshStandardMaterial palette with crisp flat shading and vibrant tones
     const materials = {
-      cyan: new THREE.MeshLambertMaterial({ color: 0x4fd1c5, flatShading: true }),
-      cyanLight: new THREE.MeshLambertMaterial({ color: 0x99f6e4, flatShading: true }),
-      cyanDark: new THREE.MeshLambertMaterial({ color: 0x288078, flatShading: true }),
-      ink: new THREE.MeshLambertMaterial({ color: 0x2d2420, flatShading: true }),
-      white: new THREE.MeshLambertMaterial({ color: 0xffffff, flatShading: true }),
-      blush: new THREE.MeshLambertMaterial({ color: 0xc96f8e, flatShading: true }),
-      gold: new THREE.MeshLambertMaterial({ color: 0xf2c94c, flatShading: true })
+      cyan: new THREE.MeshStandardMaterial({ color: 0x38d9c0, roughness: 0.25, metalness: 0.05, flatShading: true }),
+      cyanLight: new THREE.MeshStandardMaterial({ color: 0x7ef5e4, roughness: 0.2, metalness: 0.05, flatShading: true }),
+      cyanDark: new THREE.MeshStandardMaterial({ color: 0x187a70, roughness: 0.3, metalness: 0.05, flatShading: true }),
+      ink: new THREE.MeshStandardMaterial({ color: 0x1f1917, roughness: 0.45, metalness: 0.05, flatShading: true }),
+      white: new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.15, metalness: 0.0, flatShading: true }),
+      blush: new THREE.MeshStandardMaterial({ color: 0xf472b6, roughness: 0.25, metalness: 0.0, flatShading: true }),
+      gold: new THREE.MeshStandardMaterial({ color: 0xfbbf24, roughness: 0.2, metalness: 0.2, flatShading: true })
     };
 
     const addVoxel = (x, y, z, mat) => {
