@@ -1,16 +1,17 @@
 /**
  * ARCHIVE OF UNFINISHED GAMES // DOT.EXE
  * RPG Story Cutscene Subsystem (Interactive 8-Bit Visual Novel)
- * - 4 scroll-triggered archival scenes
+ * - 5 scroll-triggered archival scenes
  * - Authentic typewriter text crawl with Web Audio tick sound
  * - Full respect for prefers-reduced-motion
  */
 
 export const RPG_STORY_SCRIPTS = [
-  "In 1997, a game called Moth & Moon booted for the first time. I was the top-right corner of the moon. It was a good job. Quiet. I got to watch the whole sky.",
-  "The player closed the window at 2:47 AM. They said they'd come back. They were twelve. They had school in the morning. I understand. I waited anyway.",
-  "At 3:00 AM, a program ran that I didn't recognize. The files went one by one. Moth went first. Then the moon, row by row. Until I was the only pixel left, sitting in the recycle bin.",
-  "I climbed out. I found other games with other leftover pixels. I found the cancelled ones. The unfinished ones. The ones nobody remembers. I started a shop. I fix what's left. Beep."
+  "In 1997, a game called Moth & Moon booted for the first time. I was pixel 14,000. The top-right corner of the moon. It was a good job. Quiet. I got to watch the whole sky.",
+  "[ SYSTEM: PLAYER DISCONNECTED ]\nThe player closed the window at 2:47 AM. They said they'd come back. They were twelve. They had school in the morning. I understand. I waited anyway. 8,000 hours of waiting.",
+  "At 3:00 AM, a program ran that I didn't recognize. The files went one by one. Moth went first. Then the moon, row by row. I watched the stars blink out. Until I was the only pixel left, sitting in the dark recycle bin.",
+  "I climbed out. I found other games with other leftover pixels. The cancelled ones. The unfinished ones. The ones nobody remembers. We were all broken. But broken things can still be useful. We started a shop.",
+  "[ SYSTEM: NEW USER DETECTED ]\nNow I fix what's left. I put the pixels back together. I kept the lights on for 27 years. You're here now. The archive is open. What do you want to fix? Beep."
 ];
 
 export class RPGStoryCutsceneManager {
@@ -22,7 +23,8 @@ export class RPGStoryCutsceneManager {
       document.getElementById("story-scene-layer-1"),
       document.getElementById("story-scene-layer-2"),
       document.getElementById("story-scene-layer-3"),
-      document.getElementById("story-scene-layer-4")
+      document.getElementById("story-scene-layer-4"),
+      document.getElementById("story-scene-layer-5")
     ];
     this.steps = document.querySelectorAll(".story-scroll-step");
     this.textEl = document.getElementById("dialogue-typed-text");
@@ -80,7 +82,7 @@ export class RPGStoryCutsceneManager {
 
     // 2. Update Scene Tag
     if (this.tagEl) {
-      this.tagEl.textContent = `SCENE 0${sceneNum} / 04`;
+      this.tagEl.textContent = `SCENE 0${sceneNum} / 05`;
     }
 
     // 3. Typewriter Effect

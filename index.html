@@ -166,7 +166,7 @@
           <span class="eyebrow hero-eyebrow">ARCHIVE OF UNFINISHED GAMES</span>
           
           <h1 class="hero-title" id="boot-heading">
-            I'm Dot. I fix what got left behind.
+            I'm <span class="hero-title-highlight">Dot</span>. I fix what got left behind.
           </h1>
 
           <p class="hero-desc" id="hero-welcome-text">
@@ -179,7 +179,11 @@
           <!-- Cute Companion Toy: Give Dot a Star -->
           <div class="hero-companion-toy" id="hero-companion-toy">
             <button id="give-star-btn" class="give-star-btn" type="button" aria-label="Give Dot a golden star to cheer him up">
-              <span class="star-btn-emoji" aria-hidden="true">⭐</span>
+              <span class="star-btn-emoji" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="display:inline-block; vertical-align:middle;">
+                  <polygon points="8,1 10.2,5.8 15.3,6.5 11.6,10.1 12.5,15.2 8,12.8 3.5,15.2 4.4,10.1 0.7,6.5 5.8,5.8" fill="#F2C94C" stroke="#D4A72C" stroke-width="0.8" stroke-linejoin="round"/>
+                </svg>
+              </span>
               <span class="star-btn-label">Give Dot a star</span>
               <span id="hero-star-badge" class="star-badge-counter">0</span>
             </button>
@@ -286,6 +290,48 @@
                 <rect x="17" y="19" width="1" height="1" fill="#2D2420" />
               </g>
             </svg>
+
+            <!-- Diorama Canvas Mount & Reaction Label -->
+            <div id="dot-hero-canvas-mount" class="dot-hero-canvas-mount" aria-hidden="true"></div>
+            <p id="dot-reaction-label" class="dot-reaction-label visually-hidden" aria-live="polite"></p>
+
+            <!-- Hero Mood Pill -->
+            <div id="hero-mood-pill" class="hero-mood-pill" aria-live="polite">[ STATUS: ONLINE ]</div>
+
+            <!-- Diorama Speech Bubble -->
+            <div id="diorama-speech-text" class="diorama-speech-text" aria-live="polite"></div>
+
+            <!-- Prop Interaction Buttons -->
+            <div class="diorama-props-row" aria-label="Give Dot a prop">
+              <button type="button" id="make-dot-beep-btn" class="diorama-prop-btn" title="Make Dot beep" aria-label="Make Dot beep">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 7h3l5-4v14l-5-4H4a1 1 0 01-1-1V8a1 1 0 011-1z" fill="#E2849E" stroke="#2D2420" stroke-width="1.2" stroke-linejoin="round"/>
+                  <path d="M15 6.5c1 1 1.5 2.2 1.5 3.5s-.5 2.5-1.5 3.5M17.5 4c1.8 1.8 2.5 3.8 2.5 6s-.7 4.2-2.5 6" stroke="#2D2420" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </button>
+              <button type="button" id="prop-floppy-btn" class="diorama-prop-btn" title="Give Dot a floppy disk" aria-label="Give Dot a floppy disk">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <rect x="3" y="3" width="14" height="14" rx="2" fill="#4FD1C5" stroke="#2D2420" stroke-width="1.2"/>
+                  <rect x="6" y="3" width="8" height="5" rx="1" fill="#FFFFFF" stroke="#2D2420" stroke-width="1"/>
+                  <rect x="8" y="4" width="2" height="3" fill="#2D2420"/>
+                  <rect x="5.5" y="11" width="9" height="6" rx="1" fill="#FFF4E8" stroke="#2D2420" stroke-width="1"/>
+                  <line x1="7.5" y1="13.5" x2="12.5" y2="13.5" stroke="#E2849E" stroke-width="1"/>
+                </svg>
+              </button>
+              <button type="button" id="prop-cocoa-btn" class="diorama-prop-btn" title="Give Dot some cocoa" aria-label="Give Dot some cocoa">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 7h9v7a3 3 0 01-3 3H7a3 3 0 01-3-3V7z" fill="#E08244" stroke="#2D2420" stroke-width="1.2"/>
+                  <path d="M13 8.5h1.5a2 2 0 012 2v0a2 2 0 01-2 2H13" stroke="#2D2420" stroke-width="1.2" stroke-linecap="round"/>
+                  <path d="M6.5 4.5c0-1 .8-1.5 1-2.5M10.5 4.5c0-1 .8-1.5 1-2.5" stroke="#E2849E" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </button>
+              <button type="button" id="prop-moon-btn" class="diorama-prop-btn" title="Give Dot the moon" aria-label="Give Dot the moon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M13.8 2.5a7 7 0 102.7 12.3 6.2 6.2 0 01-7.2-7.2 6.3 6.3 0 014.5-5.1z" fill="#F2C94C" stroke="#2D2420" stroke-width="1.2" stroke-linejoin="round"/>
+                  <polygon points="14.5,5 15.2,6.5 16.8,6.8 15.6,7.9 15.9,9.5 14.5,8.7 13.1,9.5 13.4,7.9 12.2,6.8 13.8,6.5" fill="#FFF4E8"/>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -472,7 +518,13 @@
           <aside class="desk-sticky-note" id="desk-sticky-note" aria-label="Dot's Desk Checklist">
             <div class="sticky-tape-tab" aria-hidden="true"></div>
             <div class="sticky-header">
-              <span class="sticky-pin" aria-hidden="true">📌</span>
+              <span class="sticky-pin" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" style="display:inline-block; vertical-align:middle;">
+                  <path d="M4 2h8l-1 5H5L4 2z" fill="#E2849E" stroke="#2D2420" stroke-width="1"/>
+                  <rect x="6.5" y="7" width="3" height="3" fill="#C96F8E"/>
+                  <line x1="8" y1="10" x2="8" y2="15" stroke="#718096" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
               <span class="sticky-title">DOT'S DESK NOTES</span>
               <span class="sticky-date">ARCHIVE_1997</span>
             </div>
@@ -685,56 +737,131 @@
           </header>
 
           <div class="card__body">
-            <div class="toy-panel toy-panel--gridpaper" id="lost-levels-map-mount">
+            <div class="pixel-overworld-container" id="lost-levels-map-mount">
               
-              <div class="map-viewport">
-                <svg
-                  class="map-overworld-svg"
-                  id="lost-levels-svg-canvas"
-                  viewBox="0 0 500 180"
-                  width="100%"
-                  height="100%"
-                  aria-label="Overworld map of 5 lost game sectors"
-                  role="img"
-                >
-                  <path id="lost-levels-base-track" d="M 65 50 L 160 90 L 270 40 L 370 120 L 450 60" fill="none" stroke="rgba(45,36,32,0.18)" stroke-width="2" stroke-dasharray="4 4" />
-                  <path id="lost-levels-active-route" d="M 65 50 L 160 90 L 270 40 L 370 120 L 450 60" fill="none" stroke="var(--berry)" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6" />
-
-                  <g class="map-node" id="map-node-1" role="button" tabindex="0" aria-label="Sector 01: World 1-4" data-loc="0">
-                    <circle cx="65" cy="50" r="14" class="node-circle" />
-                    <text x="65" y="54" class="node-text">01</text>
-                  </g>
-                  <g class="map-node" id="map-node-2" role="button" tabindex="0" aria-label="Sector 02: Sector B" data-loc="1">
-                    <circle cx="160" cy="90" r="14" class="node-circle" />
-                    <text x="160" y="94" class="node-text">02</text>
-                  </g>
-                  <g class="map-node" id="map-node-3" role="button" tabindex="0" aria-label="Sector 03: Moon Attic" data-loc="2">
-                    <circle cx="270" cy="40" r="14" class="node-circle" />
-                    <text x="270" y="44" class="node-text">03</text>
-                  </g>
-                  <g class="map-node" id="map-node-4" role="button" tabindex="0" aria-label="Sector 04: Boss Room" data-loc="3">
-                    <circle cx="370" cy="120" r="14" class="node-circle" />
-                    <text x="370" y="124" class="node-text">04</text>
-                  </g>
-                  <g class="map-node" id="map-node-5" role="button" tabindex="0" aria-label="Sector 05: Save Point" data-loc="4">
-                    <circle cx="450" cy="60" r="14" class="node-circle" />
-                    <text x="450" y="64" class="node-text">05</text>
-                  </g>
+              <!-- 1. The Overworld Map with Winding Dotted Path -->
+              <div class="pixel-map-stage" aria-label="Pixel art RPG overworld map">
+                <svg class="pixel-map-svg" viewBox="0 0 460 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- Pixel terrain decoration -->
+                  <rect x="24" y="24" width="8" height="8" fill="var(--sage)" opacity="0.25" rx="1" />
+                  <rect x="180" y="20" width="10" height="10" fill="var(--sage)" opacity="0.2" rx="1" />
+                  <rect x="310" y="140" width="8" height="8" fill="var(--sage)" opacity="0.25" rx="1" />
+                  <rect x="420" y="110" width="12" height="12" fill="var(--sage)" opacity="0.2" rx="1" />
+                  
+                  <!-- Winding Dotted RPG Path -->
+                  <path
+                    id="pixel-map-winding-path"
+                    d="M 50 115 C 80 50, 120 40, 150 75 C 190 125, 230 135, 255 70 C 275 25, 325 35, 355 105 C 385 160, 415 130, 425 75"
+                    stroke="var(--ink)"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-dasharray="2 7"
+                    opacity="0.3"
+                  />
                 </svg>
+
+                <!-- 5 Clickable Overworld Stops with Cute SVGs -->
+                <button
+                  type="button"
+                  class="pixel-map-marker active"
+                  data-marker="bridge"
+                  style="left: 11%; top: 68%;"
+                  title="The Bridge"
+                  aria-label="The Bridge"
+                >
+                  <span class="marker-dot-halo"></span>
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M2 14c3-1 6-1 8 0s6 1 8 0" stroke="#4FD1C5" stroke-width="1.6" stroke-linecap="round"/>
+                    <line x1="3" y1="10" x2="17" y2="10" stroke="#A05A32" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="6" y1="7" x2="6" y2="13" stroke="#7A3E1D" stroke-width="1.5"/>
+                    <line x1="10" y1="7" x2="10" y2="13" stroke="#7A3E1D" stroke-width="1.5"/>
+                    <line x1="14" y1="7" x2="14" y2="13" stroke="#7A3E1D" stroke-width="1.5"/>
+                  </svg>
+                  <span class="marker-badge-label">Bridge</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="pixel-map-marker"
+                  data-marker="rain"
+                  style="left: 33%; top: 44%;"
+                  title="Rain Cloud"
+                  aria-label="Rain Cloud"
+                >
+                  <span class="marker-dot-halo"></span>
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 10.5a3.5 3.5 0 016.5-1.5A3 3 0 0115 10.5a2.5 2.5 0 01-2 2.5H6a3 3 0 01-1-2.5z" fill="#99F6E4" stroke="#288078" stroke-width="1.2"/>
+                    <line x1="7" y1="14" x2="6" y2="17" stroke="#4FD1C5" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="10" y1="14" x2="9" y2="17" stroke="#4FD1C5" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="13" y1="14" x2="12" y2="17" stroke="#4FD1C5" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="marker-badge-label">Rain</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="pixel-map-marker"
+                  data-marker="attic"
+                  style="left: 55%; top: 41%;"
+                  title="Attic Window"
+                  aria-label="Attic Window"
+                >
+                  <span class="marker-dot-halo"></span>
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M10 2L3 8v9a1 1 0 001 1h12a1 1 0 001-1V8L10 2z" fill="#FFF4E8" stroke="#2D2420" stroke-width="1.2"/>
+                    <rect x="7" y="9" width="6" height="6" rx="1" fill="#F2C94C" stroke="#2D2420" stroke-width="1"/>
+                    <line x1="10" y1="9" x2="10" y2="15" stroke="#2D2420" stroke-width="0.8"/>
+                    <line x1="7" y1="12" x2="13" y2="12" stroke="#2D2420" stroke-width="0.8"/>
+                  </svg>
+                  <span class="marker-badge-label">Attic</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="pixel-map-marker"
+                  data-marker="boss"
+                  style="left: 77%; top: 62%;"
+                  title="Boss Castle"
+                  aria-label="Boss Castle"
+                >
+                  <span class="marker-dot-halo"></span>
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M4 17V8l2-2v11M14 17V8l2-2v11M6 17V9h8v8" fill="#E2849E" stroke="#2D2420" stroke-width="1.2"/>
+                    <rect x="8" y="4" width="4" height="4" fill="#E53E3E" stroke="#2D2420" stroke-width="1"/>
+                    <line x1="10" y1="4" x2="10" y2="9" stroke="#2D2420" stroke-width="1"/>
+                  </svg>
+                  <span class="marker-badge-label">Boss</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="pixel-map-marker"
+                  data-marker="save"
+                  style="left: 92%; top: 44%;"
+                  title="Save Point"
+                  aria-label="Save Point"
+                >
+                  <span class="marker-dot-halo"></span>
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <polygon points="10,2 15,7 10,12 5,7" fill="#4FD1C5" stroke="#288078" stroke-width="1.2"/>
+                    <rect x="7" y="13" width="6" height="4" rx="1" fill="#F2C94C" stroke="#2D2420" stroke-width="1"/>
+                    <line x1="10" y1="14" x2="10" y2="16" stroke="#2D2420" stroke-width="0.8"/>
+                  </svg>
+                  <span class="marker-badge-label">Save</span>
+                </button>
               </div>
 
-              <div class="map-index-row" id="map-index-row">
-                <button class="map-index-btn" type="button" data-loc="0">[01] W1-4</button>
-                <button class="map-index-btn" type="button" data-loc="1">[02] Rain</button>
-                <button class="map-index-btn" type="button" data-loc="2">[03] Attic</button>
-                <button class="map-index-btn" type="button" data-loc="3">[04] Boss</button>
-                <button class="map-index-btn" type="button" data-loc="4">[05] Save</button>
-              </div>
-
-              <div class="map-inspector-pill" id="map-inspector-box">
-                <div class="map-inspector-content" id="map-inspector-content">
-                  <span class="inspector-empty">// Tap or hover a sector node to inspect details</span>
+              <!-- 2. Tactile Sticky Note: Reason for Cancellation -->
+              <div class="map-sticky-note" id="map-sticky-note" aria-live="polite">
+                <div class="sticky-tape-strip" aria-hidden="true"></div>
+                <div class="sticky-note-header">
+                  <span class="sticky-location-tag" id="sticky-location-title">SECTOR 01 // THE BRIDGE</span>
+                  <span class="sticky-reason-badge">REASON FOR CANCELLATION</span>
                 </div>
+                <p class="sticky-reason-text" id="sticky-cancellation-reason">
+                  &ldquo;Collision mask was never finished. You just fall through into the void.&rdquo;
+                </p>
               </div>
 
             </div>
@@ -761,6 +888,7 @@
             <h3 class="card__title">Dead Game Jukebox</h3>
             <p class="card__desc">
               I found these songs in deleted files. They still work. I play them so they don't get lonely. Turn your volume up.
+            </p>
           </header>
 
           <div class="card__body">
@@ -920,12 +1048,61 @@
         </div>
       </div>
 
-      <!-- Visual Scene 4: Warm cream background, pixel-art shop icon & Dot restoring -->
+      <!-- Visual Scene 4: The Scavengers — Dot climbed out into the salvage yard with leftover broken pixels from cancelled games -->
       <div class="story-scene-layer story-scene--4" id="story-scene-layer-4" aria-hidden="true">
-        <div class="rpg-shop-backdrop">
-          <div class="rpg-shop-stage">
-            <!-- Pixel Art Shop Awning & Stall -->
-            <div class="rpg-shop-stall">
+        <div class="rpg-scavengers-backdrop">
+          <div class="rpg-scavengers-stage">
+            <div class="scavengers-cluster" aria-label="Leftover pixels and broken game sprites united">
+              <!-- Dot climbed out holding salvage beacon -->
+              <div class="scavenger-dot-wrap">
+                <div class="scavenger-pixel-hero" title="Dot climbed out">
+                  <span class="scavenger-dot-glow"></span>
+                  <span class="scavenger-dot-body"></span>
+                </div>
+                <span class="scavenger-tag tag-dot">DOT [HERO_SURVIVOR]</span>
+              </div>
+              
+              <!-- Stray Broken Pixels from Cancelled & Unfinished Games -->
+              <div class="scavenger-misfits-grid">
+                <div class="scavenger-item item-amber" title="Leftover moth wing pixel">
+                  <span class="misfit-pixel pixel-amber"></span>
+                  <span class="misfit-label">MOTH_WING.RAW</span>
+                </div>
+                <div class="scavenger-item item-berry" title="Cancelled 1998 RPG sword pixel">
+                  <span class="misfit-pixel pixel-berry"></span>
+                  <span class="misfit-label">LOST_SWORD.DAT</span>
+                </div>
+                <div class="scavenger-item item-purple" title="Unfinished prototype level pixel">
+                  <span class="misfit-pixel pixel-purple"></span>
+                  <span class="misfit-label">PROTOTYPE_04</span>
+                </div>
+              </div>
+
+              <!-- Makeshift Workshop Assembly Banner -->
+              <div class="scavenger-workbench-box">
+                <div class="workbench-status-strip">
+                  <span class="status-led led-blink"></span>
+                  <span class="workbench-title">SCAVENGER RECOVERY &bull; WORKSHOP FOUNDED</span>
+                </div>
+                <div class="workbench-broken-props">
+                  <span class="broken-prop prop-shard" title="Broken sword shard">&#9876;</span>
+                  <span class="broken-prop prop-heart" title="Glitch heart">&#9829;</span>
+                  <span class="broken-prop prop-gear" title="Salvaged gear">&#9881;</span>
+                  <span class="broken-prop prop-spark" title="Energy spark">&#10022;</span>
+                </div>
+                <span class="workbench-subtext">BROKEN THINGS CAN STILL BE USEFUL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Scene 5: The Archive Opens — Warm cream background, glowing berry-colored shop sign, warm glowing shop counter & cursor clicking Enter -->
+      <div class="story-scene-layer story-scene--5" id="story-scene-layer-5" aria-hidden="true">
+        <div class="rpg-shop-backdrop rpg-archive-backdrop">
+          <div class="rpg-shop-stage rpg-archive-stage">
+            <!-- Pixel Art Shop Stall with Warm Glowing Counter -->
+            <div class="rpg-shop-stall rpg-archive-stall">
               <div class="rpg-shop-awning">
                 <span class="awning-stripe stripe-berry"></span>
                 <span class="awning-stripe stripe-cream"></span>
@@ -935,18 +1112,49 @@
                 <span class="awning-stripe stripe-cream"></span>
                 <span class="awning-stripe stripe-berry"></span>
               </div>
-              <div class="rpg-shop-counter">
-                <div class="rpg-shop-sign">DOT&rsquo;S SPRITE REPAIR</div>
+              
+              <!-- Glowing Berry-Colored Shop Sign -->
+              <div class="rpg-shop-sign rpg-archive-berry-sign" id="rpg-archive-berry-sign">
+                <span class="sign-star" aria-hidden="true">&#10022;</span>
+                <span class="sign-text">THE ARCHIVE IS OPEN</span>
+                <span class="sign-star" aria-hidden="true">&#10022;</span>
+              </div>
+
+              <!-- Warm Glowing Shop Counter -->
+              <div class="rpg-shop-counter rpg-archive-counter">
                 <div class="rpg-shop-items">
                   <span class="shop-prop prop-moon" title="Restored Moon">&#9790;</span>
                   <span class="shop-prop prop-sword" title="Restored Sword">&#9876;</span>
                   <span class="shop-prop prop-hat" title="Restored Hat">&#9787;</span>
+                  <span class="shop-prop prop-star" title="Restored Star">&#9733;</span>
                 </div>
+
+                <!-- Retro RPG Enter Action with Clicking Cursor -->
+                <div class="rpg-enter-action" aria-label="System prompt: New user detected, Enter Archive">
+                  <div class="rpg-system-alert-badge">[ SYSTEM: NEW USER DETECTED ]</div>
+                  <div class="rpg-enter-btn-wrap">
+                    <button type="button" class="rpg-enter-btn" tabindex="-1" aria-label="Enter Archive">
+                      <span class="enter-btn-icon">&#9654;</span>
+                      <span class="enter-btn-text">ENTER [ &crarr; ]</span>
+                    </button>
+                    <!-- Animated Retro Pixel Cursor Clicking Enter -->
+                    <div class="rpg-pixel-cursor-pointer" aria-hidden="true">
+                      <svg class="pixel-hand-svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 2v11h3v-2h2v-2h2v-2h2V5h-2V3h-2V2H7z" fill="#ffffff" />
+                        <path d="M7 2v11h3v-2h2v-2h2v-2h2V5h-2V3h-2V2H7z" stroke="#1A1423" stroke-width="1.5" stroke-linejoin="round" />
+                        <rect x="5" y="13" width="7" height="6" fill="#ffffff" stroke="#1A1423" stroke-width="1.5" />
+                        <circle cx="9" cy="8" r="1.5" fill="#C96F8E" />
+                      </svg>
+                      <span class="cursor-click-ring"></span>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
-            
-            <!-- Restorer Dot Waving Beside Shop -->
-            <div class="rpg-shop-dot">
+
+            <!-- Restorer Dot Waving Beside Shop with Golden Brush -->
+            <div class="rpg-shop-dot rpg-archive-dot">
               <svg width="100" height="100" viewBox="0 0 32 32" shape-rendering="crispEdges">
                 <rect x="8" y="8" width="16" height="16" fill="#4FD1C5" />
                 <rect x="8" y="7" width="12" height="1" fill="#2D2420" />
@@ -976,11 +1184,11 @@
             <span class="dialogue-pulse-dot" aria-hidden="true"></span>
             <span class="dialogue-speaker">DOT</span>
           </div>
-          <div class="dialogue-meta-chip" id="dialogue-scene-tag">SCENE 01 / 04</div>
+          <div class="dialogue-meta-chip" id="dialogue-scene-tag">SCENE 01 / 05</div>
         </div>
         
         <p class="dialogue-text" id="dialogue-typed-text">
-          In 1997, a game called Moth &amp; Moon booted for the first time. I was the top-right corner of the moon. It was a good job. Quiet. I got to watch the whole sky.
+          In 1997, a game called Moth &amp; Moon booted for the first time. I was pixel 14,000. The top-right corner of the moon. It was a good job. Quiet. I got to watch the whole sky.
         </p>
 
         <div class="dialogue-indicator" aria-hidden="true">&#9660;</div>
@@ -988,12 +1196,13 @@
 
     </div>
 
-    <!-- Scroll Timeline: 4 Trigger Steps driving IntersectionObserver -->
+    <!-- Scroll Timeline: 5 Trigger Steps driving IntersectionObserver -->
     <div class="story-scroll-track" id="story-scroll-track" aria-hidden="true">
       <div class="story-scroll-step" data-scene="1" id="story-step-1"></div>
       <div class="story-scroll-step" data-scene="2" id="story-step-2"></div>
       <div class="story-scroll-step" data-scene="3" id="story-step-3"></div>
       <div class="story-scroll-step" data-scene="4" id="story-step-4"></div>
+      <div class="story-scroll-step" data-scene="5" id="story-step-5"></div>
     </div>
 
   </section>
@@ -1032,7 +1241,11 @@
       <div class="guestbook-card paintable" id="guestbook-container">
         <!-- Tactile Lavender Washi Tape & Paperclip -->
         <div class="washi-tape washi-tape--lavender" aria-hidden="true"></div>
-        <div class="guestbook-paperclip" aria-hidden="true" title="Paperclip">📎</div>
+        <div class="guestbook-paperclip" aria-hidden="true" title="Paperclip">
+          <svg width="22" height="30" viewBox="0 0 24 32" fill="none" stroke="#718096" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 11v11a5 5 0 0010 0V8a3.5 3.5 0 00-7 0v13a1.8 1.8 0 003.6 0V11"/>
+          </svg>
+        </div>
         
         <div class="guestbook-header">
           <span class="eyebrow card__eyebrow" style="color:var(--berry);">BENCH 04 // LIVE WISHBOOK</span>
@@ -1298,12 +1511,51 @@
       <div class="chat-suggestions-shelf" id="chat-suggestions-shelf" aria-label="Suggested topics">
         <span class="suggestions-label">PICK A TOPIC:</span>
         <div class="suggestions-chips-track">
-          <button type="button" class="chat-chip-btn" data-prompt="hello">👋 Hello!</button>
-          <button type="button" class="chat-chip-btn" data-prompt="game">🎮 Broken sprites?</button>
-          <button type="button" class="chat-chip-btn" data-prompt="moth and moon">🌙 Moth &amp; Moon?</button>
-          <button type="button" class="chat-chip-btn" data-prompt="shop">🏪 Where is your shop?</button>
-          <button type="button" class="chat-chip-btn" data-prompt="chipped corner">✂️ Chipped corner?</button>
-          <button type="button" class="chat-chip-btn" data-prompt="bye">👋 Bye for now</button>
+          <button type="button" class="chat-chip-btn" data-prompt="hello">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 10.5V3.5a1 1 0 012 0v7M9 5a1 1 0 012 0v5.5M11 6.5a1 1 0 012 0V11a5 5 0 01-10 0V8a1 1 0 012 0v2.5"/>
+            </svg>
+            <span>Hello!</span>
+          </button>
+          <button type="button" class="chat-chip-btn" data-prompt="game">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="12" height="8" rx="3"/>
+              <line x1="5" y1="8" x2="7" y2="8"/>
+              <line x1="6" y1="7" x2="6" y2="9"/>
+              <circle cx="10" cy="7.5" r="0.6" fill="currentColor"/>
+              <circle cx="11.5" cy="8.5" r="0.6" fill="currentColor"/>
+            </svg>
+            <span>Broken sprites?</span>
+          </button>
+          <button type="button" class="chat-chip-btn" data-prompt="moth and moon">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M12 2a6 6 0 101.5 11 5.2 5.2 0 01-6-6 5.3 5.3 0 014.5-5z"/>
+            </svg>
+            <span>Moth &amp; Moon?</span>
+          </button>
+          <button type="button" class="chat-chip-btn" data-prompt="shop">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 5l1.5-2h9L14 5v1a2 2 0 01-4 0 2 2 0 01-4 0 2 2 0 01-4 0V5z"/>
+              <path d="M3 6v7a1 1 0 001 1h8a1 1 0 001-1V6"/>
+              <line x1="6.5" y1="14" x2="6.5" y2="10"/>
+              <line x1="9.5" y1="14" x2="9.5" y2="10"/>
+            </svg>
+            <span>Where is your shop?</span>
+          </button>
+          <button type="button" class="chat-chip-btn" data-prompt="chipped corner">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="4" cy="4.5" r="2"/>
+              <circle cx="4" cy="11.5" r="2"/>
+              <path d="M5.5 6L14 13M5.5 10L14 3"/>
+            </svg>
+            <span>Chipped corner?</span>
+          </button>
+          <button type="button" class="chat-chip-btn" data-prompt="bye">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 1v3M8 12v3M1 8h3M12 8h3M3 3l2 2M11 11l2 2M3 13l2-2M11 5l2-2"/>
+            </svg>
+            <span>Bye for now</span>
+          </button>
         </div>
       </div>
 
@@ -1320,6 +1572,14 @@
       </form>
     </div>
   </aside>
+
+  <!-- Pixel Trail Toggle -->
+  <div class="pixel-trail-toggle-wrap">
+    <input type="checkbox" id="pixel-trail-toggle" class="pixel-trail-toggle" checked aria-label="Toggle stray pixel trail effect" />
+    <label id="trail-toggle-label" class="trail-toggle-label" for="pixel-trail-toggle">
+      <span id="trail-toggle-text" class="trail-toggle-text">TRAIL</span>
+    </label>
+  </div>
 
   <div id="pixel-trail-container" aria-hidden="true"></div>
 

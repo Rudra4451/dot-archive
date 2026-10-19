@@ -690,158 +690,76 @@ export class SpriteRepairWorkshop {
 // ---------------------------------------------------------------------------
 // 4. THE LOST LEVELS MAP
 // ---------------------------------------------------------------------------
-export const MAP_LOCATIONS = [
-  {
-    id: "LOC_01 // WORLD 1-4",
-    name: "World 1-4: The Half-Drawn Bridge",
-    year: "1996",
-    missing: "Bridge planks (tiles 12-19), collision mask, 1 bridge troll sprite",
-    note: "The bridge stops midway over the chasm, right where the coffee was spilled. If you jump anyway, you just float on unfinished mathematics."
+export const LOST_LEVEL_MARKERS = {
+  bridge: {
+    title: "SECTOR 01 // THE BRIDGE",
+    reason: "Collision mask was never finished. You just fall through into the void."
   },
-  {
-    id: "LOC_02 // SECTOR B",
-    name: "Sector B: The Rain That Forgot to Stop",
-    year: "1998",
-    missing: "Stop-weather trigger, shelter geometry, dry coat inventory icon",
-    note: "The developer never wrote the line that makes the storm clear up. I leave little pixel umbrellas on the sidewalk every Tuesday."
+  rain: {
+    title: "SECTOR 02 // RAIN CLOUD",
+    reason: "The particle effects caused the 1997 servers to catch fire."
   },
-  {
-    id: "LOC_03 // MOON ATTIC",
-    name: "Moon Attic: Missing Frame #88",
-    year: "1997",
-    missing: "Crescent Moon frame 88 (full crescent shine), attic key",
-    note: "This was the room right above my original game. Frame 88 is the only one still missing from the sky, so the moon blinks once and then pauses."
+  attic: {
+    title: "SECTOR 03 // ATTIC WINDOW",
+    reason: "Too many spiders. The animator quit."
   },
-  {
-    id: "LOC_04 // BOSS ROOM",
-    name: "Boss Room: The Dragon on Coffee Break",
-    year: "1995",
-    missing: "Attack animation cycle, victory theme, fire particle engine",
-    note: "The giant lizard has been sitting in its idle animation for thirty-one years. It looks remarkably relaxed for a final encounter."
+  boss: {
+    title: "SECTOR 04 // BOSS CASTLE",
+    reason: "The boss was just a giant, untextured red cube. We ran out of time."
   },
-  {
-    id: "LOC_05 // SAVE POINT",
-    name: "Save Point: Tuesday, 4:15 PM",
-    year: "1999",
-    missing: "Confirmation dialog, memory card save routine, chapter 2",
-    note: "The timestamp never advances past 4:15. Someone saved here right before soccer practice and forgot where the cartridge was kept."
+  save: {
+    title: "SECTOR 05 // SAVE POINT",
+    reason: "The save function deleted your game instead. We hid it."
   }
-];
+};
 
 export class LostLevelsMapManager {
   constructor(audioEngine) {
     this.audioEngine = audioEngine;
     this.mapMount = document.getElementById("lost-levels-map-mount");
-    this.indexRow = document.getElementById("map-index-row");
-    this.inspectorContent = document.getElementById("map-inspector-content");
-    this.selectedIndex = -1;
+    this.titleEl = document.getElementById("sticky-location-title");
+    this.reasonEl = document.getElementById("sticky-cancellation-reason");
+    this.markers = [];
   }
 
   init() {
-    if (!this.mapMount || !this.inspectorContent) return;
+    if (!this.mapMount || !this.titleEl || !this.reasonEl) return;
 
-    const svgNodes = this.mapMount.querySelectorAll(".map-node");
-    svgNodes.forEach((node) => {
-      const idx = parseInt(node.getAttribute("data-loc"), 10);
-      node.addEventListener("click", () => {
-        this.selectLocation(idx, true);
+    this.markers = this.mapMount.querySelectorAll(".pixel-map-marker");
+    this.markers.forEach((marker) => {
+      marker.addEventListener("click", () => {
+        const key = marker.getAttribute("data-marker");
+        this.selectMarker(key, marker);
       });
-      node.addEventListener("keydown", (e) => {
+      marker.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          this.selectLocation(idx, true);
+          const key = marker.getAttribute("data-marker");
+          this.selectMarker(key, marker);
         }
       });
     });
-
-    if (this.indexRow) {
-      const indexBtns = this.indexRow.querySelectorAll(".map-index-btn");
-      indexBtns.forEach((btn) => {
-        const idx = parseInt(btn.getAttribute("data-loc"), 10);
-        btn.addEventListener("click", () => {
-          this.selectLocation(idx, true);
-        });
-      });
-    }
-
-    this.selectLocation(0, false);
-    this.setupRouteDrawingObserver();
   }
 
-  setupRouteDrawingObserver() {
-    const mapCard = document.getElementById("project-map") || this.mapMount;
-    const routePath = document.getElementById("lost-levels-active-route");
-    if (!mapCard || !routePath) return;
+  selectMarker(key, activeBtn) {
+    const data = LOST_LEVEL_MARKERS[key];
+    if (!data) return;
 
-    let pathLength = 460;
-    try {
-      if (typeof routePath.getTotalLength === "function") {
-        pathLength = Math.ceil(routePath.getTotalLength()) || 460;
-      }
-    } catch (e) {}
-
-    routePath.style.strokeDasharray = `${pathLength} ${pathLength}`;
-    routePath.style.strokeDashoffset = `${pathLength}`;
-    routePath.style.transition = "stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1)";
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            routePath.style.strokeDashoffset = "0";
-            const nodes = this.mapMount.querySelectorAll(".map-node");
-            nodes.forEach((n, i) => {
-              setTimeout(() => {
-                n.classList.add("node-reached");
-              }, 180 + i * 220);
-            });
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-
-    observer.observe(mapCard);
-  }
-
-  selectLocation(index, userTriggered = false) {
-    if (index < 0 || index >= MAP_LOCATIONS.length) return;
-    this.selectedIndex = index;
-    const loc = MAP_LOCATIONS[index];
-
-    if (userTriggered && this.audioEngine) {
+    if (this.audioEngine) {
       this.audioEngine.playMapBlip();
     }
 
-    const svgNodes = this.mapMount.querySelectorAll(".map-node");
-    svgNodes.forEach((node) => {
-      const idx = parseInt(node.getAttribute("data-loc"), 10);
-      const isSelected = idx === index;
-      node.classList.toggle("active", isSelected);
-      node.setAttribute("aria-pressed", isSelected.toString());
-    });
-
-    if (this.indexRow) {
-      const indexBtns = this.indexRow.querySelectorAll(".map-index-btn");
-      indexBtns.forEach((btn) => {
-        const idx = parseInt(btn.getAttribute("data-loc"), 10);
-        const isSelected = idx === index;
-        btn.classList.toggle("active", isSelected);
-        btn.setAttribute("aria-pressed", isSelected.toString());
-      });
+    this.markers.forEach((m) => m.classList.remove("active"));
+    if (activeBtn) {
+      activeBtn.classList.add("active");
     }
 
-    this.inspectorContent.innerHTML = `
-      <div class="inspector-record">
-        <div class="inspector-record-row"><dt>LOCATION ID:</dt><dd>${loc.id}</dd></div>
-        <div class="inspector-record-row"><dt>SECTOR NAME:</dt><dd>${loc.name}</dd></div>
-        <div class="inspector-record-row"><dt>YEAR ABANDONED:</dt><dd>${loc.year}</dd></div>
-        <div class="inspector-record-row"><dt>MISSING ASSETS:</dt><dd>${loc.missing}</dd></div>
-        <div class="inspector-note">
-          &ldquo;${loc.note}&rdquo;
-        </div>
-      </div>
-    `;
+    if (this.titleEl) {
+      this.titleEl.textContent = data.title;
+    }
+    if (this.reasonEl) {
+      this.reasonEl.textContent = `\u201C${data.reason}\u201D`;
+    }
   }
 }
 
@@ -1032,7 +950,7 @@ export class ChiptuneJukeboxManager {
       if (this.soundMaster.toggleBtn) {
         this.soundMaster.toggleBtn.classList.add("active");
         this.soundMaster.toggleBtn.setAttribute("aria-pressed", "true");
-        const label = this.soundMaster.toggleBtn.querySelector(".sound-label");
+        const label = this.soundMaster.toggleBtn?.querySelector(".sound-label");
         if (label) label.textContent = "SOUND ON";
       }
     }
@@ -1260,6 +1178,9 @@ export class DotPointerReactionManager {
   setSpeech(text) {
     if (this.speechTextEl) {
       this.speechTextEl.textContent = text;
+      this.speechTextEl.classList.remove("speech-pop");
+      void this.speechTextEl.offsetWidth;
+      this.speechTextEl.classList.add("speech-pop");
     }
   }
 
@@ -1445,7 +1366,7 @@ export class StrayPixelTrailManager {
 
   updateToggleText() {
     if (this.toggleText) {
-      this.toggleText.textContent = this.isEnabled ? "[x] Pixel Trail" : "[ ] Pixel Trail";
+      this.toggleText.textContent = this.isEnabled ? "TRAIL ON" : "TRAIL OFF";
     }
   }
 
@@ -1701,7 +1622,7 @@ export class LostLevelEasterEggManager {
 
   renderBadges() {
     if (this.topBadgeSlot) {
-      this.topBadgeSlot.innerHTML = `<span class="lost-level-stamp">&#9733; SECTOR 00</span>`;
+      this.topBadgeSlot.innerHTML = `<svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><polygon points="8,1 10.2,5.8 15.3,6.5 11.6,10.1 12.5,15.2 8,12.8 3.5,15.2 4.4,10.1 0.7,6.5 5.8,5.8"/></svg><span>SECTOR 00</span>`;
       this.topBadgeSlot.style.display = "inline-flex";
       this.topBadgeSlot.title = "Secret Easter Egg: Sector 00 Restored";
     }

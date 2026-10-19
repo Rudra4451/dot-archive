@@ -816,7 +816,7 @@ export class SoundMasterManager {
     if (!this.toggleBtn) return;
 
     this.toggleBtn.setAttribute("aria-pressed", (!this.isMuted).toString());
-    const label = this.toggleBtn.querySelector(".sound-toggle-label");
+    const label = this.toggleBtn.querySelector(".sound-label");
 
     if (this.isMuted) {
       this.toggleBtn.classList.remove("active");

@@ -50,9 +50,9 @@ To evaluate all major mechanics within one minute, follow this chronological tou
 | :--- | :--- | :--- |
 | **0:00** | **Boot Sequence & Audio Switch** | Click <kbd>Sound ON</kbd> in the header strip or press <kbd>PRESS START</kbd>. Notice the authentic floppy terminal output and the two-tone Web Audio power-on blip. Zero external audio files are downloaded. |
 | **0:15** | **Bench 01: Sprite Repair Shop** | Scroll to Workshops. Click the missing grey pixels on the 6x6 graph-paper canvas. Listen to the rising pentatonic kalimba tones and watch the localized celebration fire upon final pixel restoration. |
-| **0:30** | **Bench 02: The Lost Levels Map** | Click sector nodes or use <kbd>[01]</kbd> through <kbd>[05]</kbd> buttons to inspect forgotten game levels like *The Half-Drawn Bridge* and *The Rain That Forgot to Stop*. Watch the route path draw dynamically. |
+| **0:30** | **Bench 02: The Lost Levels Overworld Map** | Explore the retro pixel-art RPG overworld map featuring a winding dotted path and 5 interactive landmark markers (*The Half-Drawn Bridge*, *The Rain That Forgot to Stop*, *The Attic Without a Key*, *The Final Boss with No Script*, *The Last Save Point*). Click any marker to unfold tactile sticky-note cancellation reports and reveal authentic archived salvage notes. |
 | **0:40** | **3D WebGL Voxel Reconstruction** | Navigate to the Voxel Lab. Click and drag or use <kbd>&larr;</kbd> <kbd>&rarr;</kbd> <kbd>&uarr;</kbd> <kbd>&darr;</kbd> arrow keys to orbit Dot in 3D space. Notice Dot's chipped corner and golden brush rendered under a strict 1,000 triangle budget. |
-| **0:50** | **Story Cutscene & Secret Sector 00** | Scroll through the 4-scene interactive visual novel at Section 04 with real-time typewriter ticks. Then enter the Konami code (<kbd>&uarr;</kbd><kbd>&uarr;</kbd><kbd>&darr;</kbd><kbd>&darr;</kbd><kbd>&larr;</kbd><kbd>&rarr;</kbd><kbd>&larr;</kbd><kbd>&rarr;</kbd><kbd>B</kbd><kbd>A</kbd>) or click the visitor odometer 5 times to reveal the hidden Sector 00 modal. |
+| **0:50** | **Story Cutscene & Secret Sector 00** | Scroll through the 5-scene interactive visual novel at Section 04 with real-time typewriter ticks. Then enter the Konami code (<kbd>&uarr;</kbd><kbd>&uarr;</kbd><kbd>&darr;</kbd><kbd>&darr;</kbd><kbd>&larr;</kbd><kbd>&rarr;</kbd><kbd>&larr;</kbd><kbd>&rarr;</kbd><kbd>B</kbd><kbd>A</kbd>) or click the visitor odometer 5 times to reveal the hidden Sector 00 modal. |
 
 ---
 
@@ -61,6 +61,9 @@ To evaluate all major mechanics within one minute, follow this chronological tou
 ### Tier 1: Core Foundation & Visual Character
 - [x] Responsive layout with warm cream (`#FDFBF7`) background and claymorphic card tokens.
 - [x] Expressive mascot eye-tracking calculating pointer angle via `Math.atan2` within requestAnimationFrame loops.
+- [x] 100% Vector SVG Icon System replacing all generic emojis with bespoke, tactile Soft Editorial retro graphics (floppy disk, cocoa mug, crescent moon, stars, megaphone, pushpin).
+- [x] Clean minimal header strip with decluttered telemetry and streamlined frosted micro pixel-trail toggle.
+- [x] Mascot tactile diorama with 3D ground shadow, interactive prop toys, and bouncy dialogue speech bubbles.
 - [x] Typography system pairing Fraunces display serif with Fredoka sans-serif for zero layout shift.
 - [x] Day and 3:00 AM Midnight theme switcher with custom dusk and dawn synthesized harp chords.
 - [x] Semantic HTML5 structure utilizing `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>` landmarks.
@@ -68,14 +71,14 @@ To evaluate all major mechanics within one minute, follow this chronological tou
 ### Tier 2: Interactive Systems & Audio Engine
 - [x] Synthesizer audio engine built purely on the browser Web Audio API with zero external media files.
 - [x] Sprite Repair Shop featuring 3 salvageable sprite files, interactive color restoration, and reset states.
-- [x] The Lost Levels map blueprint with sector inspection pills and animated SVG stroke-dasharray drawing.
-- [x] Chiptune Jukebox playing 3 multi-voice 8-bit tracks with a responsive text oscilloscope.
+- [x] The Lost Levels interactive RPG pixel overworld map with winding dotted trail, 5 landmark sector markers, and tactile cancellation field notes.
+- [x] Chiptune Jukebox playing 3 multi-voice 8-bit tracks with a responsive text oscilloscope and CRT phosphor screen.
 - [x] Paint Bucket tool turning cards into interactive canvases across berry, gold, and sage palettes.
 
 ### Tier 3: Polish, 3D Graphics & Secret Easter Eggs
 - [x] Procedural Three.js 3D voxel Dot model (780 triangles) lazy-loaded via IntersectionObserver with mobile vector fallback.
 - [x] Rule-based Character AI terminal chat with conversation topic chips and authentic personality ending in "beep".
-- [x] Interactive 4-scene RPG cutscene visual novel with typewriter sound ticks and reduced-motion support.
+- [x] Interactive 5-scene RPG cutscene visual novel with typewriter sound ticks and reduced-motion support.
 - [x] Persistent visitor memory greeting returning guests with personalized save files via localStorage.
 - [x] Secret Sector 00 modal revealed via 10-key Konami code or 5 rapid taps on the odometer.
 - [x] Glitch Overdrive Chaos Mode featuring a top ticker marquee strip and cloned sprite mini-nodes.
